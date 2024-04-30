@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/cadastro.css">
+    <title>Cadastro-JJ</title>
+</head>
+<body>
+    <!--essa parte é para cadastrar blz-->
+
+    <!--Tela de cima-->
+    <div class="cim">
+        <div class="cim2">
+            <Label>Loja</Label>
+            <Label>Comunidade</Label>
+            <Label>Sobre</Label>
+            <Label>Suporte</Label>
+        </div>
+    </div>
+
+    <!--tela de baixo-->
+    <div class="tela">
+        <div class="cad">
+            <form action="../php/cadastro.php" method="post" name="dados" onSubmit="return enviardados();" class="for">
+                <h1>CADASTRE-SE</h1>
+                <label>Endereço de e-mail</label> 
+                <br>
+                <input class="textspace" type="text" name="email" class="form-control" required> 
+                <br>
+                <br>
+                <br>
+
+                <label>Sua senha</label> <br>
+                <input class="textspace" type="password" name="senha" class="form-control" required>  
+                <br>
+                <br>
+                <br>
+
+                <label>Confirme sua senha</label> <br>
+                <input class="textspace" type="password" name="senha_confirm" class="form-control" required>
+                <br>
+                <br>
+                <br>
+                <br>
+                <input type="checkbox">
+                <label class="label2">Concordo com os termos de uso</label>
+                <br>
+                <br>
+                <br>
+
+                <button type="submit">Cadastrar</button>
+
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
