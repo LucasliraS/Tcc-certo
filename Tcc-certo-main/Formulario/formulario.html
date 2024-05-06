@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="formulario.css">
+    <title>Formulário de Jogo</title>
+</head>
+<body>
+   
+
+    <!-- Parte inferior - formulário de jogo -->
+    <div class="tela">
+        <div class="cad">
+            <form action="inserir_jogo.php" method="post" class="for">
+                <h1>Formulário de Jogo</h1>
+                <label>Nome do Jogo:</label>
+                <br>
+                <input class="textspace" type="text" name="nome_do_jogo"> 
+                <br>
+                <br>
+                <label>Descrição:</label>
+                <br>
+                <textarea class="textspace" name="descricao"  ></textarea>
+                <br>
+                <br>
+                <label>Gênero:</label>
+                <br>
+                <select class="textspace" name="genero">
+                    <option value="acao">Ação</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="rpg">RPG</option>
+                    <option value="estrategia">Estratégia</option>
+                    <option value="simulacao">Simulação</option>
+                    <!-- Adicione mais opções conforme necessário -->
+                </select>
+                <br>
+                <br>
+                <label>Preço:</label>
+                <br>
+                <input class="textspace" type="text" name="preco"> 
+                <br>
+                <br>
+                <label for="myfile">Selecione o arquivo do jogo </label>
+                <br>
+                <input type="file" id="arquivo_jogo" name="arquivo_jogo" ><br><br>
+                <label for="myfile">Selecione as imagens </label>
+                <br>
+                <input type="file" id="imagem" name="imagem" multiple><br><br>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </div>
+
+</body>
+</html>
