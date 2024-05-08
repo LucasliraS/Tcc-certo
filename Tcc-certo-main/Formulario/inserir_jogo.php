@@ -17,10 +17,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $nome_do_dv = $_POST['nome_do_dev'];
     $arquivo_jogo = $_POST['arquivo_jogo'];
     $imagem_jogo = $_POST ['imagem_jogo'];
+    $logo_jogo = $_POST ['logo_jogo'];
 
     
     // Prepara a consulta SQL para inserir os dados no banco de dados
-    $sql = "INSERT INTO Jogos (Nome, Descricao, Genero, Preco,) VALUES ('$nome', '$descricao', '$genero', '$preco')";
+    $sql = "INSERT INTO Jogos (Nome, Descricao, Genero, Preco, arquivo_jogo, imagem_jogo, logo_jogo) VALUES ('$nome', '$descricao', '$genero', '$preco', '$arquivo_jogo', '$imagem_jogo', '$logo_jogo')";
 
     if (mysqli_query($conexao, $sql)) {
         echo "Novo jogo cadastrado com sucesso!";

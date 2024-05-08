@@ -19,3 +19,9 @@ ADD arquivo_jogo  TEXT NULL;
 
 ALTER TABLE Jogos
 ADD Imagem_jogo TEXT NULL;
+
+ALTER TABLE Jogos
+ADD logo_jogo TEXT NULL;
+
+ALTER TABLE Jogos
+DROP COLUMN Imagem;
