@@ -16,3 +16,6 @@ ADD Imagem  TEXT NULL ;
 
 ALTER TABLE Jogos
 ADD arquivo_jogo  TEXT NULL;
+
+ALTER TABLE Jogos
+ADD Imagem_jogo TEXT NULL;
