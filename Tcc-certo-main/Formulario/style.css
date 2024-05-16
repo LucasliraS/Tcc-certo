@@ -59,8 +59,6 @@ body{
 }
 
 .descricao{
-    height: 40px;
-    width: 96%;
     max-height: 40px;
     max-width: 96%;
     min-width: 96%;
