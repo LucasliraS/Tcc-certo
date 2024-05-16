@@ -14,14 +14,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $descricao = $_POST['descricao'];
     $genero = $_POST['genero'];
     $preco = $_POST['preco'];
-    $nome_do_dv = $_POST['nome_do_dev'];
-    $arquivo_jogo = $_POST['arquivo_jogo'];
-    $imagem_jogo = $_POST ['imagem_jogo'];
-    $logo_jogo = $_POST ['logo_jogo'];
+    $nome_do_dev = $_POST['nome_do_dev'];
+    $arquivo_jogo = $_FILES['arquivo_jogo']['name'];
+    $imagem_jogo = $_FILES['imagem_jogo']['name'];
+    $logo_jogo = $_FILES['logo_jogo']['name'];
+    $status = $_POST['status']; //saber se ele esta em breve ou agora
 
-    
+    // Diretório onde os arquivos serão armazenados
+    $diretorio = "upload/";
+
+    // Move os arquivos para o diretório especificado
+    move_uploaded_file($_FILES['arquivo_jogo']['tmp_name'], $diretorio . $arquivo_jogo);
+    move_uploaded_file($_FILES['imagem_jogo']['tmp_name'], $diretorio . $imagem_jogo);
+    move_uploaded_file($_FILES['logo_jogo']['tmp_name'], $diretorio . $logo_jogo);
+
     // Prepara a consulta SQL para inserir os dados no banco de dados
-    $sql = "INSERT INTO Jogos (Nome, Descricao, Genero, Preco, arquivo_jogo, imagem_jogo, logo_jogo) VALUES ('$nome', '$descricao', '$genero', '$preco', '$arquivo_jogo', '$imagem_jogo', '$logo_jogo')";
+    $sql = "INSERT INTO Jogos (Nome, Descricao, Genero, Preco, nome_do_dev, arquivo_jogo, imagem_jogo, logo_jogo, status) VALUES ('$nome', '$descricao', '$genero', '$preco', '$nome_do_dev', '$arquivo_jogo', '$imagem_jogo', '$logo_jogo', '$status')";
 
     if (mysqli_query($conexao, $sql)) {
         echo "Novo jogo cadastrado com sucesso!";

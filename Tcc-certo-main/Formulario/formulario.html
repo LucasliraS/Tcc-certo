@@ -13,18 +13,21 @@
     <!-- Parte inferior - formulário de jogo -->
     <div class="tela">
         <div class="cad">
-            <form action="inserir_jogo.php" method="post" class="for">
+            <form action="inserir_jogo.php" method="post" class="for" enctype="multipart/form-data">
                 <h1>Formulário de Jogo</h1>
                 <label>Nome do Jogo:</label>
                 <br>
                 <input class="textspace" type="text" name="nome_do_jogo"> 
                 <br>
                 <br>
-                <br>
                 <label>Nome dos Devs/Empresa</label>
                 <br>
                 <input class="textspace" type="text" name="nome_do_dev"> 
                 <br>
+                <br>
+                <label>Descrição:</label>
+                <br>
+                <textarea class="textspace" name="descricao"></textarea>
                 <br>
                 <br>
                 <label>Gênero:</label>
@@ -39,48 +42,28 @@
                 </select>
                 <br>
                 <br>
-                <br>
                 <label>Preço:</label>
                 <br>
                 <input class="textspace" type="text" name="preco"> 
                 <br>
                 <br>
-                <label for="myfile">Selecione o arquivo do jogo </label>
+                <label for="myfile">Selecione o arquivo do jogo</label>
                 <br>
-                <input type="file" id="arquivo_jogo" name="arquivo_jogo" >
+                <input type="file" id="arquivo_jogo" name="arquivo_jogo"><br><br>
+                <label for="myfile">Selecione as imagens</label>
                 <br>
+                <input type="file" id="imagem_jogo" name="imagem_jogo" multiple><br><br>
+                <label for="myfile">Selecione sua logo</label>
                 <br>
-                <br>
-                <label for="myfile">Selecione as imagens </label>
-                <br>
-                <input type="file" id="imagem_jogo" name="imagem_jogo" multiple>
-                <br>
-                <br>
-                <br>
-                <label for="myfile">Selecione sua logo </label>
-                <br>
-                <input type="file" id="logo_jogo" name="logo_jogo" >
-                <br>
-                <br>
-                <br>
-                <label>Descrição:</label>
-                <br>
-                <textarea class="desc" name="descricao"  ></textarea>
-                <br>
-                <br>
-                <label>Quando o jogo será lançado?</label>
-                <br>
+                <input type="file" id="logo_jogo" name="logo_jogo"><br><br>
+                <label>O jogo será:</label>
                 <br>
                 <input type="radio" id="em_breve" name="status" value="em_breve">
                 <label for="em_breve">Em Breve</label><br>
                 <input type="radio" id="lancado_agora" name="status" value="lancado_agora">
-                <label for="lancado_agora">Lançar Agora</label><br><br>
-                <br>
-                <div class="enviar">
-                <button class="botao" type="submit">Enviar</button>
-                </div>
+                <label for="lancado_agora">Lançado Agora</label><br><br>
+                <button type="submit">Enviar</button>
             </form>
-            
         </div>
     </div>
 
