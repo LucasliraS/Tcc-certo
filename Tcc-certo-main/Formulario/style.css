@@ -5,12 +5,15 @@
     padding: 0;
     border: 0;
 }
+body{
+    background-color: #1d1d25;
+    background-attachment: fixed;
+}
 
 .container{
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #1d1d25;
     height: 120vh;
 }
 
@@ -19,6 +22,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 .formulario_titulo{
@@ -52,6 +56,15 @@
     border: none;
     border-radius: 0.5rem;
     padding: 0.5rem;
+}
+
+.descricao{
+    height: 40px;
+    width: 96%;
+    max-height: 40px;
+    max-width: 96%;
+    min-width: 96%;
+    min-height: 40px;
 }
 
 .container_file{
