@@ -1,35 +1,37 @@
 body {
-    background-image: linear-gradient(to right, #000000, #353535);
-
-    margin: 0;
-    padding: 0;
-}
-
-.tela {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    
+    background-color: #18181f;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.tela {
+    height: 100%;
+
 }
 
 .cad {
+    width: 80vh;
     font-family: Arial, Helvetica, sans-serif;
     border: 5px solid transparent;
-    border-color: #ffffff;
+    border-radius: 10px;
     /*border-image: linear-gradient(to left, black, orange) 1;*/ /*esse aqui é o gradient*/
 }
 
 .for {
+    border-radius: 10px;
     color: white;
-    text-align: center;
-    padding: 12px;
-    background-image: linear-gradient(to left, #555555, #353535);
+    padding: 5%;
+    background-color: #262631;
 }
 
 .textspace {
-        width: 80%;
-        font-size: 15px;
+    width: 80%;
+    height: 3.5vh;
+    font-size: 15px;
+    border-radius: 10px;
+    border-style: none;
 }
 
 label {
@@ -51,4 +53,29 @@ textarea{
         width: 90%; /* ou qualquer outro valor em pixels */
         font-size: 15px;
         resize: none;
+}
+
+.enviar{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 5vh;
+}
+
+.botao{
+    height: 5vh;
+    border-radius: 5px;
+    border-style: none;
+    background-color: #eead2d;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.botao:hover{
+    background-color: #ffda76;
+
+}
+
+.desc{
+    border-radius: 5px;
 }
