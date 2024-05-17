@@ -15,8 +15,7 @@
 }
 
 .jogos{
-    border: solid;
-    width: 90%;
+    width: 95%;
     height: 100vh;
     display: flex;
     justify-content: center;
@@ -33,7 +32,6 @@
     border-radius: 10px;
     overflow: hidden;
     background-color: #fff;
-    padding: 50px;
   }
   
   
