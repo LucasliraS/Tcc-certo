@@ -1,0 +1,54 @@
+body {
+    background-image: linear-gradient(to right, #000000, #353535);
+
+    margin: 0;
+    padding: 0;
+}
+
+.tela {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    
+}
+
+.cad {
+    font-family: Arial, Helvetica, sans-serif;
+    border: 5px solid transparent;
+    border-color: #ffffff;
+    /*border-image: linear-gradient(to left, black, orange) 1;*/ /*esse aqui é o gradient*/
+}
+
+.for {
+    color: white;
+    text-align: center;
+    padding: 12px;
+    background-image: linear-gradient(to left, #555555, #353535);
+}
+
+.textspace {
+        width: 80%;
+        font-size: 15px;
+}
+
+label {
+    height: 100px;
+    font-size: 18px;
+    color: white;
+}
+
+button {
+    width: 40%;
+    height: 3.5vh;
+    font-size: 18px;
+}
+.cim{
+    text-align: left;
+}
+textarea{
+        height: 100px; /* ou qualquer outro valor em pixels */
+        width: 90%; /* ou qualquer outro valor em pixels */
+        font-size: 15px;
+        resize: none;
+}

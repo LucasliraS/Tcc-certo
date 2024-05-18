@@ -13,7 +13,7 @@ CREATE TABLE Jogos (
     arquivo_jogo VARCHAR(255) NOT NULL,
     Imagem_jogo VARCHAR(255) NOT NULL,
     logo_jogo VARCHAR(255) NOT NULL,
-    Status ENUM('em_breve', 'lancado_agora') NOT NULL,
+    status_jogo ENUM('em_breve', 'lancado_agora') NOT NULL,
     nome_do_dev VARCHAR(255) NOT NULL
 );
 
