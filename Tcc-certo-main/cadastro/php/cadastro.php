@@ -20,14 +20,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "As senhas não coincidem.";
     } else {
         // Verifica se o e-mail ja esta cadastrado
-        $query_verifica_email = "SELECT * FROM usuarios WHERE email = '$email'";
+        $query_verifica_email = "SELECT * FROM usuario WHERE email = '$email'";
         $resultado_verifica_email = mysqli_query($conexao, $query_verifica_email);
 
         if (mysqli_num_rows($resultado_verifica_email) > 0) {
             echo "Este e-mail já está cadastrado.";
         } else {
             // Insere os dados na tabela de usuarios
-            $query_cadastro = "INSERT INTO usuarios (email, senha) VALUES ('$email', '$senha')";
+            $query_cadastro = "INSERT INTO usuario (email, senha) VALUES ('$email', '$senha')";
             if (mysqli_query($conexao, $query_cadastro)) {
                 echo "Cadastro realizado com sucesso!";
                 // Redireciona para a pagina de sucesso
