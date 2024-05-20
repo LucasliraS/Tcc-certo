@@ -1,6 +1,7 @@
 body{
     display: flex;
-    background-color:	#262525;
+    background-color:	#16161d;
+    /* background-image: linear-gradient(to top left, #262626, #161515); */
   }
 
   .logo{
@@ -120,19 +121,60 @@ body{
     color: white;
   }
 
-  .descri{
+  label{
+    color: white;
+    margin-left: 5%;
+  }
+
+  .preco{
+    background-color: rgb(35, 123, 255);
+    width: 15%;
+    height: 22px;
+    border-radius: 5px;
+  }
+
+  .inf{
+    margin-top: 3%;
+  }
+
+
+  .genero{
+    
+    width: 13%;
+    height: 50%;
     margin-top: 45%;
     margin-left: -76%;
+    border-left: 1px solid #ccc;
+  }
+
+
+  .gen1{
+    color: #808080;
+    margin-left: 3%;
+  }
+
+  .gen{
+    margin-top: -20px;
+    margin-left: 3%;
+    
+  }
+
+
+  .descri{
+    margin-top: 51%;
+    margin-left: -76%;
     width: 45%;
-    height: 50%;
+    height: 250px;
     
     border: 1px solid #ccc;
     border-radius: 3px;
     
   }
 
+  .pos{margin-left: 1%;}
+
   .botao{
-    margin-top: 36%;
+    margin-top: 37%;
     margin-left: 1%;
     width: 30%;
     height: 20%;
@@ -140,13 +182,24 @@ body{
   }
 
   .stl-botao{
-    background-color: rgb(0, 0, 114);
+    background-color: #ff8800;
     color: white;
     border-style: none;
     border-radius: 5px;
     border-style: 1px solid #ccc;
     cursor: pointer;
-    width: 200px;
-    height: 27px;
+    width: 250px;
+    height: 50px;
   }
  
+  .comentarios{
+    border-style: 1px solid #ccc;
+    margin-top: 51%;
+    margin-left: 33%;
+    width: 30%;
+    height: 20%;
+    
+    color: white;
+    
+    
+  }
