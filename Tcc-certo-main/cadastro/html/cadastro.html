@@ -25,32 +25,30 @@
         <div class="cad">
             <form action="../php/cadastro.php" method="post" name="dados" onSubmit="return enviardados();" class="for">
                 <h1>CADASTRE-SE</h1>
-                <label>Endereço de e-mail</label> 
-                <br>
-                <input class="textspace" type="text" name="email" class="form-control" required> 
-                <br>
-                <br>
-                <br>
 
-                <label>Sua senha</label> <br>
-                <input class="textspace" type="password" name="senha" class="form-control" required>  
-                <br>
-                <br>
-                <br>
+                <div class="endereco">
+                    <label>Endereço de e-mail</label> 
+                    <input class="textspace" type="text" name="email" class="form-control" required> 
+                </div>
 
-                <label>Confirme sua senha</label> <br>
-                <input class="textspace" type="password" name="senha_confirm" class="form-control" required>
-                <br>
-                <br>
-                <br>
-                <br>
-                <input type="checkbox">
-                <label class="label2">Concordo com os termos de uso</label>
-                <br>
-                <br>
-                <br>
+                <div class="senha">
+                    <label>Sua senha</label> <br>
+                    <input class="textspace" type="password" name="senha" class="form-control" required>  
+                </div>
 
-                <button type="submit">Cadastrar</button>
+                <div class="confir-senha">
+                    <label>Confirme sua senha</label> <br>
+                    <input class="textspace" type="password" name="senha_confirm" class="form-control" required>
+                </div>
+
+                <div class="termos">
+                    <input type="checkbox">
+                    <label class="label2">Concordo com os termos de uso</label>
+                </div>
+
+                <div class="cadastrar">
+                    <button type="submit">Cadastrar</button>
+                </div>
 
             </form>
         </div>
