@@ -9,26 +9,32 @@
 </head>
 <body>
 
-    <div class="filter-container">
-        <select id="categoryFilter" onchange="filterGames()">
-            <option value="all">Todos</option>
-            <option value="aventura">Aventura</option>
-            <option value="ação">Ação</option>
-            <option value="rpg">Rpg</option>
-            <option value="estrategia">Estratégia</option>
-            <option value="puzzle">Puzzle</option>
-        </select>
-        <select id="priceFilter" onchange="filterGames()">
-            <option value="all">Todos</option>
-            <option value="menor30">$30 ou menos</option>
-            <option value="menor25">$25 ou menos</option>
-            <option value="menor50">$50 ou menos</option>
-            <option value="menor100">$100 ou menos</option>
-        </select>
-    </div>
-
-
     <div class="box">
+        <div class="titulo">
+            <h1>Jogos Lançamentos</h1>
+        </div>
+        <div class="filter-container">
+            <div class="filtro" >
+                <select class="botao-filtro" id="categoryFilter" onchange="filterGames()">
+                    <option value="all">Todas as categorias</option>
+                    <option value="aventura">Aventura</option>
+                    <option value="ação">Ação</option>
+                    <option value="rpg">Rpg</option>
+                    <option value="estrategia">Estratégia</option>
+                    <option value="puzzle">Puzzle</option>
+                </select>
+            </div>
+            <div class="filtro" >
+                <select class="botao-filtro" id="priceFilter" onchange="filterGames()">
+                    <option value="all">Todos os preços</option>
+                    <option value="menor30">$30 ou menos</option>
+                    <option value="menor25">$25 ou menos</option>
+                    <option value="menor50">$50 ou menos</option>
+                    <option value="menor100">$100 ou menos</option>
+                </select>
+            </div>
+        </div>
+
         <div class="jogos">
             <div class="card" data-category="aventura" data-price="25.00">
                 <div class="imagem">
