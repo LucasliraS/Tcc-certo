@@ -1,5 +1,7 @@
-body{
+  body{
     font-family: Arial, Helvetica, sans-serif;
+    color: #fff;
+    background-color:#1d1d25;
 }
 
 
@@ -49,6 +51,8 @@ body{
   .container {
     padding: 2px 16px;
     text-align: center;
+    background-color: #e4a700;
+    height: 20vh;
   }
 
   .container h4 {
@@ -74,4 +78,37 @@ body{
     border-top-left-radius: 10px;
     border-bottom: 1px solid;
     height: 20vh;
+}
+
+.filtro{
+    border: solid;
+    height: 8vh;
+    border-radius: 10px;
+
+}
+
+.filter-container{
+    height: 8vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+
+}
+
+.botao-filtro{
+    border-radius: 10px;
+    height: 8vh;
+    font-size: 15px;
+    cursor: pointer;
+
+}
+
+.titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+    padding-top: 40px;
+
 }
