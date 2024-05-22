@@ -112,7 +112,7 @@ body{
 
   .subimg{
     margin-top: 20%;
-    margin-left: 2.5%;
+    margin-left: 1%;
     width: 30%;
     height: 20%;
   }
@@ -143,7 +143,7 @@ body{
     width: 13%;
     height: 50%;
     margin-top: 45%;
-    margin-left: -77.5%;
+    margin-left: -76%;
     border-left: 1px solid #ccc;
   }
 
@@ -162,7 +162,7 @@ body{
 
   .descri{
     margin-top: 51%;
-    margin-left: -77.5%;
+    margin-left: -76%;
     width: 45%;
     height: 250px;
     
@@ -175,7 +175,7 @@ body{
 
   .botao{
     margin-top: 37%;
-    margin-left: 2.5%;
+    margin-left: 1%;
     width: 30%;
     height: 20%;
     
@@ -186,21 +186,19 @@ body{
     color: white;
     border-style: none;
     border-radius: 5px;
-    
+    border-style: 1px solid #ccc;
     cursor: pointer;
     width: 250px;
     height: 50px;
   }
  
   .comentarios{
-    border: 1px solid #ccc;
-    border-radius: 2px;
-
+    border-style: 1px solid #ccc;
     margin-top: 51%;
     margin-left: 33%;
     width: 30%;
-    height: 200px;
-    background-color:#33333f;
+    height: 20%;
+    
     color: white;
     
     
