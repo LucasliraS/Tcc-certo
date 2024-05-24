@@ -10,46 +10,33 @@
 <body>
     <!--essa parte é para cadastrar blz-->
 
-    <!--Tela de cima-->
-    <div class="cim">
-        <div class="cim2">
-            <Label>Loja</Label>
-            <Label>Comunidade</Label>
-            <Label>Sobre</Label>
-            <Label>Suporte</Label>
-        </div>
-    </div>
+    <!--Navbar-->
+
 
     <!--tela de baixo-->
-    <div class="tela">
         <div class="cad">
-            <form action="../php/login.php" method="post" class="for">
-                <h1>CONECTE-SE</h1>
-                <label>Iniciar com e-mail</label> 
-                <br>
-                <input class="textspace" type="text" name="email"> 
-                <br>
-                <br>
-                <br>
+            <form class="formulario" action="../php/login.php" method="post" class="for">
+                <div class="formulario_container">
+                    <h1 class="formulario_titulo">Login</h1>
 
-                <label>senha</label> <br>
-                <input class="textspace" type="password" name="senha"> 
-                <br>
-                <br>
-                <br>
-                <input type="checkbox">
-                <label class="label2">Lembre-me</label>
-                <br>
-                <br>
-                <br>
+                    <div class="container_input">
+                        <label>E-mail</label> 
+                        <input class="formulario_input" type="text" name="email"> 
+                    </div>
 
-                <button type="submit">Iniciar</button>
+                    <div class="container_input">
+                        <label>Senha</label>
+                        <input class="formulario_input" type="password" name="senha"> 
+                    </div>
 
-                <label class="peq">Não possui uma conta? <a href="../../cadastro/html/cadastro.html">Clique aqui</a></label> <br>
-                <br>
+                    <div class="container_submit">
+                        <button class="formulario_submit" type="submit">Iniciar</button>
+                    </div>
+
+                    <label class="peq">Não possui uma conta? <a href="../../cadastro/html/cadastro.html">Clique aqui</a></label>
+                </div>
             </form>
         </div>
-    </div>
 
 </body>
 </html>
