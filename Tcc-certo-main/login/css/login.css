@@ -1,68 +1,88 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
 body{
-    background-image: linear-gradient(
-        to right, rgb(12, 12, 12), orange
-    );
-}
-
-.cim{
-    background-color: none;
-    height: 45px;
-    border: solid;
-    border-width: 1px;
-}
-
-
-
-.cim2{
-    padding-left: 70%;
-}
-
-.tela{
-    border-right: none;
-    border-width: 1px;
-    padding-left: 15%;
-    padding-top: 10%;
-    height: 79vh;
-    width: 40%;
- 
+    background-color: #1d1d25;
+    background-attachment: fixed;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
 .cad{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
 
-    flex-direction: row;
-    height: 70%;
-    width: 70%;
-    font-family: Arial, Helvetica, sans-serif;
-  
+.formulario{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.formulario{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.formulario_titulo{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+.formulario_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 70vh;
+    width: 50%;
+    gap: 1rem;
+    background-color: #21212d;
+    border-radius: 1rem;
+    color: #fff;
+    font-weight: bold;
+}
+
+.container_submit{
+    width: 100%;
+    display: flex;
+    justify-content: center;
     
 }
 
-.for{
-    color: white;
-}
-
-.textspace{
-    height: 3.5vh;
+.formulario_submit{
+    background-color: #e4a700;
+    text-align: center;
+    border: none;
+    border-radius: 1rem;
+    padding: 1rem;
     width: 80%;
-    font-size: 15px
+    color: #fff;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    font-size: 1rem;
+    
 }
 
-label{
-    font-size: 18px;
-    color: white;
+.container_input{
+    display: flex;
+    flex-direction: column;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    text-align: justify;
+    gap: 0.25rem;
+    width: 80%;
 }
 
-.label2{
-    font-size: 12px;
+.formulario_input{
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
 }
-
-button{
-    width: 40%;
-    height: 3.5vh;
-    font-size: 18px
-}
-
-.peq{
-    font-size: 12px;
-}
-
