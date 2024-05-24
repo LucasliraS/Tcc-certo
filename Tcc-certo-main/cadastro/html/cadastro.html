@@ -10,49 +10,39 @@
 <body>
     <!--essa parte é para cadastrar blz-->
 
-    <!--Tela de cima-->
-    <div class="cim">
-        <div class="cim2">
-            <Label>Loja</Label>
-            <Label>Comunidade</Label>
-            <Label>Sobre</Label>
-            <Label>Suporte</Label>
-        </div>
-    </div>
+    <!--Navibar-->
 
     <!--tela de baixo-->
-    <div class="tela">
-        <div class="cad">
-            <form action="../php/cadastro.php" method="post" name="dados" onSubmit="return enviardados();" class="for">
-                <h1>CADASTRE-SE</h1>
+    <div class="cad">
+        <form class="formulario" action="../php/cadastro.php" method="post" name="dados" onSubmit="return enviardados();" class="for">
+            <div class="formulario_container">
+                <h1 class="formulario_titulo">Cadastro</h1>
 
-                <div class="endereco">
-                    <label>Endereço de e-mail</label> 
-                    <input class="textspace" type="text" name="email" class="form-control" required> 
+                <div class="container_input">
+                    <label>Endereço de e-mail: </label>
+                    <input class="formulario_input" type="text" id="precoInput" name="preco" required>
                 </div>
 
-                <div class="senha">
-                    <label>Sua senha</label> <br>
-                    <input class="textspace" type="password" name="senha" class="form-control" required>  
+                <div class="container_input">
+                    <label>Sua senha:</label>
+                    <input class="formulario_input" type="password" name="senha" class="form-control" required>  
                 </div>
 
-                <div class="confir-senha">
-                    <label>Confirme sua senha</label> <br>
-                    <input class="textspace" type="password" name="senha_confirm" class="form-control" required>
+                <div class="container_input">
+                    <label>Confirme sua senha:</label>
+                    <input class="formulario_input" type="password" name="senha_confirm" class="form-control" required>
                 </div>
 
-                <div class="termos">
+                <div class="container_radio">
                     <input type="checkbox">
-                    <label class="label2">Concordo com os termos de uso</label>
+                    <label>Concordo com os termos de uso</label>
                 </div>
 
-                <div class="cadastrar">
-                    <button type="submit">Cadastrar</button>
+                <div class="container_submit">
+                    <button class="formulario_submit" type="submit">Cadastrar</button>
                 </div>
-
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
-
 </body>
 </html>
