@@ -1,6 +1,7 @@
 body{
   display: flex;
   background-color:	#16161d;
+  overflow: auto;
   /* background-image: linear-gradient(to top left, #262626, #161515); */
 }
 
@@ -16,7 +17,7 @@ body{
 }
 
 .header{
-  position: fixed;
+  position: fixed; 
   top: 0;
   left: 0;
   width: 100%;
@@ -61,10 +62,25 @@ padding: 5px;
 }
 
 
-.Buscar{
+.comentar{
   height: 24px;
   border-radius: 10px;
   border-style: none;
+  width: 240px;
+}
+
+.comen{
+  margin-left: 1%;
+  margin-top: 1%;
+}
+
+.combtn{
+  background-color: #ff8800;
+  height: 24px;
+  border-radius: 10px;
+  border-style: none;
+  width: 100px;
+  color: white;
   
 }
 
@@ -128,7 +144,8 @@ label{
 
 .preco{
   background-color: rgb(35, 123, 255);
-  width: 15%;
+  width: 75px;
+  min-width: 75px;
   height: 22px;
   border-radius: 5px;
 }
@@ -140,7 +157,8 @@ label{
 
 .genero{
   
-  width: 13%;
+  width: 130px;
+  min-width: 130px;
   height: 50%;
   margin-top: 45%;
   margin-left: -77.5%;
@@ -197,7 +215,7 @@ label{
   border-radius: 2px;
   overflow-y: auto;
   margin-top: 51%;
-  margin-left: 34.5%;
+  margin-left: 40.7%;
   width: 30%;
   height: 200px;
   background-color:#33333f;
@@ -206,10 +224,21 @@ label{
   
 }
 
+.comentario{
+  font-size: small;
+  color: rgb(151, 151, 151);
+}
+
 .com{
-  border: 1px solid #ccc;
-  max-width: 400px;
+  border-bottom: 1px solid #ccc;
+  max-width: 515px;
   margin-left: 1%;
   margin-top: 1%;
-  border-radius: 5px;
+  
+}
+
+.perf{
+  border-radius: 100%;
+  width: 40px;
+  height: 40px;
 }
