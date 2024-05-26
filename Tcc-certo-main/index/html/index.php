@@ -76,369 +76,112 @@
     </div>
   </div>
 
-
-  <div class="tamanhoS1">
-    <div class="destaques">
-      <div class="vermais">
-        <h2 class="titulo">Lançamentos</h2>
-        <button class="botao" type="submit">VER MAIS</button>
-      </div>
+ <!-- Lançamentos -->
+ <div class="tamanhoS1">
+  <div class="destaques">
+    <div class="vermais">
+      <h2 class="titulo">Lançamentos</h2>
+      <button class="botao" type="submit">VER MAIS</button>
+    </div>
     <div id="carouselExampleIndicators-2" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators-2" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators-2" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators-2" data-slide-to="2"></li>
+        <?php foreach ($imagens as $index => $jogo): ?>
+          <li data-target="#carouselExampleIndicators-2" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
+        <?php endforeach; ?>
       </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-
-            <div class="conteudo">
+      <div class="carousel-inner">
+        <?php
+        $chunks = array_chunk($imagens, 3); // Divide as imagens em grupos de 3
+        foreach ($chunks as $index => $chunk):
+          ?>
+          <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+            <div class="container">
               <div class="row">
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-                    
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-              
-          </div>
-          <div class="carousel-item">
-            <div class="conteudo">
-              <div class="row">
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-                  <div class="col-sm">
-                      <div class="cardj">
-                        <div class="imagej">
-                          <h2>Div 1</h2>
-                          <p>Conteúdo da Div 1</p>                      
-                        </div>
-                        <div class="gamen">
-                          <h2 class="nomej">nome</h2>
-                          <h3>preço</h3>
-                        </div>
-                      </div>
-                  </div>
-                    
-                  <div class="col-sm">
+                <?php foreach ($chunk as $jogo): ?>
+                  <div class="col-sm-4">
                     <div class="cardj">
                       <div class="imagej">
-                        <h2>Div 1</h2>
-                        <p>Conteúdo da Div 1</p>                      
+                        <div class="realimg">
+                        <img class="img-fluid w-100" src="<?= "../../formulario/upload_imagem/" . $jogo['imagem'] ?>" alt="<?= $jogo['nome'] ?>">
+                        </div>
                       </div>
                       <div class="gamen">
-                        <h2 class="nomej">nome</h2>
-                        <h3>preço</h3>
+                        <h2 class="nomej"><?= $jogo['nome'] ?></h2>
+                        <h3><?= $jogo['preco'] == 0 ? 'Gratuito' : 'R$ ' . number_format($jogo['preco'], 2, ',', '.') ?></h3>
                       </div>
                     </div>
                   </div>
-
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="conteudo">
-              <div class="row">
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-                  <div class="col-sm">
-                      <div class="cardj">
-                        <div class="imagej">
-                          <h2>Div 1</h2>
-                          <p>Conteúdo da Div 1</p>                      
-                        </div>
-                        <div class="gamen">
-                          <h2 class="nomej">nome</h2>
-                          <h3>preço</h3>
-                        </div>
-                      </div>
-                  </div>
-                    
-                  <div class="col-sm">
-                    <div class="cardj">
-                      <div class="imagej">
-                        <h2>Div 1</h2>
-                        <p>Conteúdo da Div 1</p>                      
-                      </div>
-                      <div class="gamen">
-                        <h2 class="nomej">nome</h2>
-                        <h3>preço</h3>
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators-2" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators-2" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-    </div>
+        <?php endforeach; ?>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators-2" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators-2" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
-  
+</div>
 
-
-  <div class="tamanhoS2">
-    <div class="destaques">
-      <div class="vermais">
-        <h2 class="titulo">Jogos populares</h2>
-        <button class="botao" type="submit">VER MAIS</button>
-      </div>
+ <!-- Jogos Populares -->
+ <div class="tamanhoS1">
+  <div class="destaques">
+    <div class="vermais">
+      <h2 class="titulo">Jogos populares</h2>
+      <button class="botao" type="submit">VER MAIS</button>
+    </div>
     <div id="carouselExampleIndicators-3" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators-3" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators-3" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators-3" data-slide-to="2"></li>
+        <?php foreach ($imagens as $index => $jogo): ?>
+          <li data-target="#carouselExampleIndicators-3" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
+        <?php endforeach; ?>
       </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-
-            <div class="conteudo">
+      <div class="carousel-inner">
+        <?php
+        $chunks = array_chunk($imagens, 3); // Divide as imagens em grupos de 3
+        foreach ($chunks as $index => $chunk):
+          ?>
+          <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+            <div class="container">
               <div class="row">
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-                    
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-              
-          </div>
-          <div class="carousel-item">
-            <div class="conteudo">
-              <div class="row">
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-                  <div class="col-sm">
-                      <div class="cardj">
-                        <div class="imagej">
-                          <h2>Div 1</h2>
-                          <p>Conteúdo da Div 1</p>                      
-                        </div>
-                        <div class="gamen">
-                          <h2 class="nomej">nome</h2>
-                          <h3>preço</h3>
-                        </div>
-                      </div>
-                  </div>
-                    
-                  <div class="col-sm">
+                <?php foreach ($chunk as $jogo): ?>
+                  <div class="col-sm-4">
                     <div class="cardj">
                       <div class="imagej">
-                        <h2>Div 1</h2>
-                        <p>Conteúdo da Div 1</p>                      
+                        <div class="realimg">
+                        <img class="img-fluid w-100" src="<?= "../../formulario/upload_imagem/" . $jogo['imagem'] ?>" alt="<?= $jogo['nome'] ?>">
+                        </div>
                       </div>
                       <div class="gamen">
-                        <h2 class="nomej">nome</h2>
-                        <h3>preço</h3>
+                        <h2 class="nomej"><?= $jogo['nome'] ?></h2>
+                        <h3><?= $jogo['preco'] == 0 ? 'Gratuito' : 'R$ ' . number_format($jogo['preco'], 2, ',', '.') ?></h3>
                       </div>
                     </div>
                   </div>
-
+                <?php endforeach; ?>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="conteudo">
-              <div class="row">
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-                  <div class="col-sm">
-                      <div class="cardj">
-                        <div class="imagej">
-                          <h2>Div 1</h2>
-                          <p>Conteúdo da Div 1</p>                      
-                        </div>
-                        <div class="gamen">
-                          <h2 class="nomej">nome</h2>
-                          <h3>preço</h3>
-                        </div>
-                      </div>
-                  </div>
-                    
-                  <div class="col-sm">
-                    <div class="cardj">
-                      <div class="imagej">
-                        <h2>Div 1</h2>
-                        <p>Conteúdo da Div 1</p>                      
-                      </div>
-                      <div class="gamen">
-                        <h2 class="nomej">nome</h2>
-                        <h3>preço</h3>
-                      </div>
-                    </div>
-                  </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators-3" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators-3" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-    </div>
+        <?php endforeach; ?>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators-3" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators-3" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
+</div>
+
 
 
   <div class="tamanhoS3">
@@ -603,206 +346,59 @@
     </div>
   </div>
 
-<!--erro-->
-  <div class="tamanhoS4">
-    <div class="destaques">
-      <div class="vermais">
-        <h2 class="titulo">Promoçoes especiais</h2>
-        <button class="botao" type="submit">VER MAIS</button>
-      </div>
+ <!-- Promoçoes especias -->
+ <div class="tamanhoS1">
+  <div class="destaques">
+    <div class="vermais">
+      <h2 class="titulo">Promoções especias</h2>
+      <button class="botao" type="submit">VER MAIS</button>
+    </div>
     <div id="carouselExampleIndicators-5" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
-        <li data-target="#carouselExampleIndicators-5" data-slide-to="0" class="active"></li>
-        <li data-target="#carouselExampleIndicators-5" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators-5" data-slide-to="2"></li>
+        <?php foreach ($imagens as $index => $jogo): ?>
+          <li data-target="#carouselExampleIndicators-5" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
+        <?php endforeach; ?>
       </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-
-            <div class="conteudo">
+      <div class="carousel-inner">
+        <?php
+        $chunks = array_chunk($imagens, 3); // Divide as imagens em grupos de 3
+        foreach ($chunks as $index => $chunk):
+          ?>
+          <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+            <div class="container">
               <div class="row">
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-                    
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-              
-          </div>
-          <div class="carousel-item">
-            <div class="conteudo">
-              <div class="row">
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-                  <div class="col-sm">
-                      <div class="cardj">
-                        <div class="imagej">
-                          <h2>Div 1</h2>
-                          <p>Conteúdo da Div 1</p>                      
-                        </div>
-                        <div class="gamen">
-                          <h2 class="nomej">nome</h2>
-                          <h3>preço</h3>
-                        </div>
-                      </div>
-                  </div>
-                    
-                  <div class="col-sm">
+                <?php foreach ($chunk as $jogo): ?>
+                  <div class="col-sm-4">
                     <div class="cardj">
                       <div class="imagej">
-                        <h2>Div 1</h2>
-                        <p>Conteúdo da Div 1</p>                      
+                        <div class="realimg">
+                        <img class="img-fluid w-100" src="<?= "../../formulario/upload_imagem/" . $jogo['imagem'] ?>" alt="<?= $jogo['nome'] ?>">
+                        </div>
                       </div>
                       <div class="gamen">
-                        <h2 class="nomej">nome</h2>
-                        <h3>preço</h3>
+                        <h2 class="nomej"><?= $jogo['nome'] ?></h2>
+                        <h3><?= $jogo['preco'] == 0 ? 'Gratuito' : 'R$ ' . number_format($jogo['preco'], 2, ',', '.') ?></h3>
                       </div>
                     </div>
                   </div>
-
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
+                <?php endforeach; ?>
               </div>
             </div>
           </div>
-          <div class="carousel-item">
-            <div class="conteudo">
-              <div class="row">
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-
-                  <div class="col-sm">
-                      <div class="cardj">
-                        <div class="imagej">
-                          <h2>Div 1</h2>
-                          <p>Conteúdo da Div 1</p>                      
-                        </div>
-                        <div class="gamen">
-                          <h2 class="nomej">nome</h2>
-                          <h3>preço</h3>
-                        </div>
-                      </div>
-                  </div>
-                    
-                  <div class="col-sm">
-                    <div class="cardj">
-                      <div class="imagej">
-                        <h2>Div 1</h2>
-                        <p>Conteúdo da Div 1</p>                      
-                      </div>
-                      <div class="gamen">
-                        <h2 class="nomej">nome</h2>
-                        <h3>preço</h3>
-                      </div>
-                    </div>
-                  </div>
-
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
-                    </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <a class="carousel-control-prev" href="#carouselExampleIndicators-5" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators-5" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span>
-        </a>
-    </div>
+        <?php endforeach; ?>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators-5" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators-" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
+</div>
+
 
       <div class="box2">
         <div class="ver2 esq">
