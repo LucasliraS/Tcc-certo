@@ -1,0 +1,355 @@
+body{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color:	#1d1d25;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo{
+  height: 8vh;
+}
+
+.nomej{
+  color: #ffffff;
+  font-size: 30px;
+}
+
+h2{
+  color: #ffffff;
+}
+
+h3{
+  color: #ffffff;
+  font-size: 20px;
+}
+
+
+.box{
+  width: 60%;
+  padding-bottom: 10vh;
+  padding-top: 10vh; 
+  background-color:	#1d1d25;
+  gap: 60px;
+ 
+}
+
+/*navbar inicio*/
+
+
+.navbar{
+  padding-right: 12%;
+}
+
+.header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10%;
+  padding: 7px 100px;
+  background-color: 	#21212d;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 100;
+  }
+  
+.buscar{
+  padding-left: 80px;
+}
+
+
+.logo{
+  font-size: 32px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.navbar a {
+  position: relative;
+  font-size: 18px;
+  color: white;
+  font-weight: 500;
+  text-decoration: none;
+  margin-left: 40px;
+  color: #fcc120;
+}
+
+.Buscar{
+  height: 24px;
+  border-radius: 25px;
+  border-style: none;
+  padding: 5px;
+}
+
+#pesquisarmuitoshow{
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+}
+
+.navbar a::before {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #fcc120;
+  transition: .3s;
+}
+
+.navbar a:hover:before{
+  width: 100%;
+}
+
+
+
+
+/*navbar fim*/
+
+
+
+
+.botao{
+  float: right;
+}
+
+
+.tamanhoS{
+  width: 100%;
+  padding-top: 5%;
+}
+.destaques{
+  width: 100%;
+  height: 100%;
+
+}
+.tamanhoS1{
+  width: 100%;
+  height: 34vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 15vh;
+  padding-bottom: 28vh;
+ 
+}
+
+.tamanhoS2{
+  width: 100%;
+  height: 34vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30vh;
+  padding-bottom: 28vh;
+ 
+}
+
+.tamanhoS3{
+  width: 100%;
+  height: 34vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30vh;
+  padding-bottom: 28vh;
+ 
+}
+
+.tamanhoS4{
+  width: 100%;
+  height: 34vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 30vh;
+  padding-bottom: 60vh;
+ 
+}
+
+.cardj {
+  height: 310px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  background-color: #f2f2f2;
+  border-radius: 10px;
+  
+}
+
+
+ 
+.caixacard {
+  padding: 2px 16px;
+  }
+
+
+.border-nav{
+  border: 20px;
+  border-color: #fff;
+}
+
+.box2 {
+  width: 100%;
+  height: 80vh;
+  display: flex;
+}
+
+.ver2 {
+  flex-grow: 1;
+  height: 100%;
+  width: 100%;
+  border-right: 0.5px;
+  border-left: 0.5px solid;
+  padding-left: 2%;
+  padding-right: 2%;
+  border-color: #ffffff;
+  background-color:	#1d1d25;
+}
+
+.esq{
+  border-left: none;
+}
+
+.jogos{
+  height: 15vh;
+  width: 100%;
+  flex-direction: column;
+  border-radius: 20px;
+  cursor: pointer;
+
+}
+
+.jogos:hover{
+  background-color: #262630;
+}
+
+.imagej{
+  width: 100%; /* Define a largura como 100% do contêiner pai */
+  height: 220px; /* Define uma altura fixa para todas as imagens */
+  object-fit: cover; /* Redimensiona a imagem para cobrir toda a área disponível */
+}
+
+.gamen{
+  height: 30%;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  background-color: #e4a700;
+
+}
+
+.pesquisar{
+  width: 10px;
+  padding-left: 25px;
+}
+
+.ipesq{
+  justify-content: center;
+  align-items: center;
+}
+
+.carousel-control-next{
+  width: 5%;
+}
+
+.carousel-control-prev{
+  width: 5%;
+}
+
+
+p{
+  color: #ffffff;
+}
+
+
+
+.vermais {
+  position: relative;
+}
+
+.titulo {
+  display: inline-block;
+}
+
+.botao {
+  position: absolute;
+  top: 0;
+  right: 0;
+  border-style: none;
+  border: 1px solid;
+  border-radius: 5px;
+  height: 30px;
+  width: 90px;
+  background-color: #1d1d25;
+  cursor: pointer;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.botao:active{
+  border: 2px;
+}
+
+.botao:hover {
+  background-color: #868686;
+}
+
+
+/* Estilo para limitar o tamanho das imagens dentro do carrossel */
+#carouselExampleIndicators img {
+  width: 100%; /* Define a largura como 100% do contêiner pai */
+  height: 600px; /* Define uma altura fixa para todas as imagens */
+  object-fit: cover; /* Redimensiona a imagem para cobrir toda a área disponível */
+}
+.realimg img {
+  max-width: 100%;
+  max-height: 220px; /* Ou qualquer outra altura máxima desejada */
+  width: auto;
+  height: auto;
+}
+
+/*categoria*/
+.categoria{
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+}
+
+.imageg{
+  width: 100%; /* Define a largura como 100% do contêiner pai */
+  height: 260px; /* Define uma altura fixa para todas as imagens */
+  object-fit: cover; /* Redimensiona a imagem para cobrir toda a área disponível */
+  border-radius: 100%;
+}
+
+.cardc {
+  height: 350px;
+  width: 100%;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  
+
+  
+}
+
+.nomec{
+  color: #ffffff;
+  font-size: 30px;
+  border-radius: 100px;
+}
+
+.gameng{
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
+
