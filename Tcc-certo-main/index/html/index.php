@@ -22,7 +22,7 @@
   <!--Navbar-->
   <div class="c">
     <header class="header">
-      <img class="logo" src="../imagens/Logo.jpeg" alt="Joystick Jungle">
+      <img class="logo" src="../../imagens/Logo.jpeg" alt="Joystick Jungle">
       <nav class="navbar">
         <a href="../index/html/index.php" class="a">Inicio</a>
         <a href="#" class="a">Sobre</a>
@@ -130,7 +130,7 @@
 </div>
 
  <!-- Jogos Populares -->
- <div class="tamanhoS1">
+ <div class="tamanhoS2">
   <div class="destaques">
     <div class="vermais">
       <h2 class="titulo">Jogos populares</h2>
@@ -188,7 +188,6 @@
     <div class="destaques">
       <div class="vermais">
         <h2 class="titulo">Procurar por categorias</h2>
-        <button class="botao" type="submit">VER MAIS</button>
       </div>
     <div id="carouselExampleIndicators-4" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
@@ -201,41 +200,36 @@
 
             <div class="conteudo">
               <div class="row">
+
                 <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
+                  <div class="cardc">
+                    <div class="imageg">
+                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
                     </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
+                    <div class="gameng">
+                      <h2 class="nomec">Ação</h2>
                     </div>
                   </div>
                 </div>
 
                 <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
+                  <div class="cardc">
+                    <div class="imageg">
+                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
                     </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
+                    <div class="gameng">
+                      <h2 class="nomec">Aventura</h2>
                     </div>
                   </div>
                 </div>
                     
                 <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
+                  <div class="cardc">
+                    <div class="imageg">
+                      <img class="categoria" src="../../imagens/rpg.jpg" alt="Ação">                     
                     </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
+                    <div class="gameng">
+                      <h2 class="nomec">RPG</h2>
                     </div>
                   </div>
                 </div>
@@ -247,44 +241,39 @@
           <div class="carousel-item">
             <div class="conteudo">
               <div class="row">
-                <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
+
+              <div class="col-sm">
+                  <div class="cardc">
+                    <div class="imageg">
+                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
                     </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
+                    <div class="gameng">
+                      <h2 class="nomec">Estratégia</h2>
                     </div>
                   </div>
                 </div>
 
-                  <div class="col-sm">
-                      <div class="cardj">
-                        <div class="imagej">
-                          <h2>Div 1</h2>
-                          <p>Conteúdo da Div 1</p>                      
-                        </div>
-                        <div class="gamen">
-                          <h2 class="nomej">nome</h2>
-                          <h3>preço</h3>
-                        </div>
-                      </div>
-                  </div>
-                    
-                  <div class="col-sm">
-                    <div class="cardj">
-                      <div class="imagej">
-                        <h2>Div 1</h2>
-                        <p>Conteúdo da Div 1</p>                      
-                      </div>
-                      <div class="gamen">
-                        <h2 class="nomej">nome</h2>
-                        <h3>preço</h3>
-                      </div>
+                <div class="col-sm">
+                  <div class="cardc">
+                    <div class="imageg">
+                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
+                    </div>
+                    <div class="gameng">
+                      <h2 class="nomec">Simulação</h2>
                     </div>
                   </div>
+                </div>
+                    
+                <div class="col-sm">
+                  <div class="cardc">
+                    <div class="imageg">
+                      <img class="categoria" src="../../imagens/fps.jpg" alt="Ação">                     
+                    </div>
+                    <div class="gameng">
+                      <h2 class="nomec">FPS</h2>
+                    </div>
+                  </div>
+                </div>
 
               </div>
             </div>
@@ -292,44 +281,40 @@
           <div class="carousel-item">
             <div class="conteudo">
               <div class="row">
+
                 <div class="col-sm">
-                  <div class="cardj">
-                    <div class="imagej">
-                      <h2>Div 1</h2>
-                      <p>Conteúdo da Div 1</p>                      
+                  <div class="cardc">
+                    <div class="imageg">
+                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
                     </div>
-                    <div class="gamen">
-                      <h2 class="nomej">nome</h2>
-                      <h3>preço</h3>
+                    <div class="gameng">
+                      <h2 class="nomec">Puzzle</h2>
                     </div>
                   </div>
                 </div>
 
-                  <div class="col-sm">
-                      <div class="cardj">
-                        <div class="imagej">
-                          <h2>Div 1</h2>
-                          <p>Conteúdo da Div 1</p>                      
-                        </div>
-                        <div class="gamen">
-                          <h2 class="nomej">nome</h2>
-                          <h3>preço</h3>
-                        </div>
-                      </div>
-                  </div>
-                    
-                  <div class="col-sm">
-                    <div class="cardj">
-                      <div class="imagej">
-                        <h2>Div 1</h2>
-                        <p>Conteúdo da Div 1</p>                      
-                      </div>
-                      <div class="gamen">
-                        <h2 class="nomej">nome</h2>
-                        <h3>preço</h3>
-                      </div>
+                <div class="col-sm">
+                  <div class="cardc">
+                    <div class="imageg">
+                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
+                    </div>
+                    <div class="gameng">
+                      <h2 class="nomec">Medroidvania</h2>
                     </div>
                   </div>
+                </div>
+                    
+                <div class="col-sm">
+                  <div class="cardc">
+                    <div class="imageg">
+                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
+                    </div>
+                    <div class="gameng">
+                      <h2 class="nomec">Jogos de Luta</h2>
+                    </div>
+                  </div>
+                </div>
+
               </div>
             </div>
           </div>
@@ -347,7 +332,7 @@
   </div>
 
  <!-- Promoçoes especias -->
- <div class="tamanhoS1">
+ <div class="tamanhoS4">
   <div class="destaques">
     <div class="vermais">
       <h2 class="titulo">Promoções especias</h2>
