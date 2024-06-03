@@ -27,9 +27,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Verifica o tipo de arquivo do jogo
         $extensao_arquivo_jogo = pathinfo($_FILES['arquivo_jogo']['name'], PATHINFO_EXTENSION);
-        if ($extensao_arquivo_jogo !== 'zip') {
-            $error_message = "Erro: O arquivo do jogo deve ser .rar ou zip";
+        if ($extensao_arquivo_jogo !== 'zip' && $extensao_arquivo_jogo !== 'rar') {
+            $error_message = "Erro: O arquivo do jogo deve ser .rar ou .zip";
         }
+        
 
         // Verifica o tipo de arquivo da logo
         $extensao_logo_jogo = pathinfo($_FILES['logo_jogo']['name'], PATHINFO_EXTENSION);
