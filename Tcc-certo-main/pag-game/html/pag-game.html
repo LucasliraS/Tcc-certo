@@ -33,7 +33,7 @@
     <!--fim Navbar-->
 
     <!--NOME DO JOGO E CARROSEL-->
-    <h1 id="game-name">Nome</h1>
+    <h1 id="nomeJogo">Nome</h1>
 
     <div class="ffvgf">
         <div id="carouselExampleIndicators" class="carousel slide">
@@ -93,28 +93,25 @@
 
    
     <script>
-      $(document).ready(function() {
-          // ID do jogo que você deseja carregar (substitua pelo ID real)
-          var gameId = 1;
-      
-          // Requisição AJAX para buscar os dados do jogo
-          $.ajax({
-              url: 'fetch_game_data.php',
-              type: 'POST',
-              dataType: 'json',
-              data: { game_id: gameId },
-              success: function(response) {
-                  // Preencher os elementos HTML com os dados do jogo
-                  $('#game-name').text(response.Nome);
-                  $('#game-description').text(response.Descricao);
-                  $('#game-genres').text(response.Genero);
-                  $('#game-price').text(response.Preco);
-                  $('#game-developer').text(response.nome_do_dev);
-                  $('#game-release-date').text(response.data_lancamento);
-              },
-              error: function(xhr, status, error) {
-                  console.error(xhr.responseText);
-              }
-          });
-      });
-      </script>
+      // Função para recuperar parâmetros da URL
+      function getParameterByName(name, url) {
+          if (!url) url = window.location.href;
+          name = name.replace(/[\[\]]/g, "\\$&");
+          var regex = new RegExp("[?&]" + name + "(=([^&#]*)|&|#|$)"),
+              results = regex.exec(url);
+          if (!results) return null;
+          if (!results[2]) return '';
+          return decodeURIComponent(results[2].replace(/\+/g, " "));
+      }
+    
+      // Recuperando os parâmetros
+      var nomeJogo = getParameterByName('nome');
+      var precoJogo = getParameterByName('preco');
+      var imagemJogo = getParameterByName('imagem');
+    
+      // Usando os valores recuperados para exibir informações
+      document.getElementById('nomeJogo').innerText = nomeJogo;
+      document.getElementById('precoJogo').innerText = precoJogo;
+      document.getElementById('imagemJogo').src = "../../formulario/upload_imagem/" + imagemJogo;
+    </script>
+    
