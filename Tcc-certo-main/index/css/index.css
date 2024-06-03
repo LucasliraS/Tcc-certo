@@ -353,3 +353,12 @@ p{
 }
 
 
+/* Estilos para links */
+a {
+  color: inherit; /* Herda a cor do texto do pai */
+  text-decoration: none; /* Remove o sublinhado */
+}
+
+a:hover {
+  text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+}

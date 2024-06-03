@@ -9,7 +9,7 @@ if (mysqli_connect_errno()) {
 }
 
 // Consulta para buscar os jogos, suas imagens, nomes e preços
-$sql = "SELECT Nome, imagem_jogo, Preco FROM Jogo";
+$sql = "SELECT Nome, imagem_jogo, Preco FROM Jogo WHERE status_jogo='lançado_agora'";
 $resultado = mysqli_query($conexao, $sql);
 
 $imagens = [];
@@ -30,6 +30,27 @@ $jogosPopulares = $imagens; // Jogos Populares - Exibir tudo
 // Embaralha os jogos populares
 shuffle($jogosPopulares);
 $jogosPopulares = array_slice($jogosPopulares, 0, 6); // Limitar a 6 jogos
+
+
+if (isset($_POST['game_id'])) {
+    $game_id = $_POST['game_id'];
+
+    // Consulta para buscar os dados do jogo pelo ID
+    $sql = "SELECT Nome, Descricao, Genero, Preco, nome_do_dev, data_lancamento FROM Jogo WHERE id = $game_id";
+    $resultado = mysqli_query($conexao, $sql);
+
+    // Verifica se encontrou o jogo
+    if ($resultado) {
+        $jogo = mysqli_fetch_assoc($resultado);
+
+        // Retorna os dados do jogo em formato JSON
+        echo json_encode($jogo);
+    } else {
+        echo json_encode(array('error' => 'Jogo não encontrado'));
+    }
+} else {
+    echo json_encode(array('error' => 'ID do jogo não fornecido'));
+}
 ?>
 
 <ol class="carousel-indicators">

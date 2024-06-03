@@ -99,6 +99,8 @@
               <div class="row">
                 <?php foreach ($chunk as $jogo): ?>
                   <div class="col-sm-4">
+                  <a href="../../pag-game/html/pag-game.html?nome=<?= $jogo['nome'] ?>&preco=<?= $jogo['preco'] ?>&imagem=<?= $jogo['imagem'] ?>">
+
                     <div class="cardj">
                       <div class="imagej">
                         <div class="realimg">
@@ -125,12 +127,13 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
+
+
+
     </div>
   </div>
 </div>
-
- <!-- Jogos Populares -->
- <div class="tamanhoS2">
+<div class="tamanhoS2">
   <div class="destaques">
     <div class="vermais">
       <h2 class="titulo">Jogos populares</h2>
@@ -152,17 +155,22 @@
               <div class="row">
                 <?php foreach ($chunk as $jogo): ?>
                   <div class="col-sm-4">
-                    <div class="cardj">
-                      <div class="imagej">
-                        <div class="realimg">
-                        <img class="img-fluid w-100" src="<?= "../../formulario/upload_imagem/" . $jogo['imagem'] ?>" alt="<?= $jogo['nome'] ?>">
+                    <!-- Início do link para a página ../../pag-game/html/pag-game.html -->
+                    <a href="../../pag-game/html/pag-game.html?nome=<?= $jogo['nome'] ?>&preco=<?= $jogo['preco'] ?>&imagem=<?= $jogo['imagem'] ?>">
+
+                      <div class="cardj">
+                        <div class="imagej">
+                          <div class="realimg">
+                            <img class="img-fluid w-100" src="<?= "../../formulario/upload_imagem/" . $jogo['imagem'] ?>" alt="<?= $jogo['nome'] ?>">
+                          </div>
+                        </div>
+                        <div class="gamen">
+                          <h2 class="nomej"><?= $jogo['nome'] ?></h2>
+                          <h3><?= $jogo['preco'] == 0 ? 'Gratuito' : 'R$ ' . number_format($jogo['preco'], 2, ',', '.') ?></h3>
                         </div>
                       </div>
-                      <div class="gamen">
-                        <h2 class="nomej"><?= $jogo['nome'] ?></h2>
-                        <h3><?= $jogo['preco'] == 0 ? 'Gratuito' : 'R$ ' . number_format($jogo['preco'], 2, ',', '.') ?></h3>
-                      </div>
-                    </div>
+                    </a>
+                    <!-- Fim do link para a página ../../pag-game/html/pag-game.html -->
                   </div>
                 <?php endforeach; ?>
               </div>
@@ -181,8 +189,6 @@
     </div>
   </div>
 </div>
-
-
 
   <div class="tamanhoS3">
     <div class="destaques">
@@ -354,6 +360,8 @@
               <div class="container">
                 <div class="row">
                   <div class="col-sm-4">
+                  <a href="../../pag-game/html/pag-game.html?nome=<?= $jogo['nome'] ?>&preco=<?= $jogo['preco'] ?>&imagem=<?= $jogo['imagem'] ?>">
+
                     <div class="cardj">
                       <div class="imagej">
                         <div class="realimg">
@@ -386,58 +394,33 @@
 
 
       <div class="box2">
-        <div class="ver2 esq">
-          <h3>Em breve</h3>
-          <div class="jogos">
-            <p>jogo 1</p>
-          </div>
+      <div class="ver2 esq">
+    <h3>Em breve</h3>
+    <?php
+    // Consulta SQL para buscar os jogos marcados como "em_breve"
+    $sql = "SELECT Imagem_jogo FROM Jogo WHERE status_jogo = 'em_breve' ORDER BY id DESC";
+    $resultado = mysqli_query($conexao, $sql);
 
-          <div class="jogos">
-            <p>jogo 2</p>
-          </div>
+    // Contador para limitar o número de imagens a serem exibidas
+    $contador = 0;
 
-          <div class="jogos">
-            <p>jogo 3</p>
-          </div>
-
-          <div class="jogos">
-            <p>jogo 4</p>
-          </div>
-
-          <div class="jogos">
-            <p>jogo 5</p>
-          </div>
-
-        </div>
-
-        <div class="ver2">
-          <h3>Mais vendidos</h3>
-          <div class="jogos">
-            <p>jogo 1</p>
-          </div>
-
-          <div class="jogos">
-            <p>jogo 2</p>
-          </div>
-
-          <div class="jogos">
-            <p>jogo 3</p>
-          </div>
-
-          <div class="jogos">
-            <p>jogo 4</p>
-          </div>
-
-          <div class="jogos">
-            <p>jogo 5</p>
-          </div>
-
-        </div>
-
-
-      </div>
-  </div>
-</div>
+    // Verifica se há resultados
+    if (mysqli_num_rows($resultado) > 0) {
+        // Loop através dos resultados
+        while ($row = mysqli_fetch_assoc($resultado)) {
+            // Verifica se ainda podemos exibir mais imagens
+            if ($contador < 5) {
+                // Exibe a imagem
+                echo '<div class="jogos">';
+                echo '<img src="../../formulario/upload_imagem/' . $row['Imagem_jogo'] . '" alt="Imagem do jogo">';
+                echo '</div>';
+                $contador++;
+            }
+        }
+    } else {
+        echo '<p>Nenhuma imagem de jogo em breve no momento.</p>';
+    }
+    ?>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
