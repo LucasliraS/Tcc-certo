@@ -330,34 +330,34 @@
     </div>
     </div>
   </div>
-
- <!-- Promoçoes especias -->
- <div class="tamanhoS4">
+<!-- Promoçoes especias -->
+<div class="tamanhoS4">
   <div class="destaques">
     <div class="vermais">
-      <h2 class="titulo">Promoções especias</h2>
+      <h2 class="titulo">Promoções especiais</h2>
       <button class="botao" type="submit">VER MAIS</button>
     </div>
     <div id="carouselExampleIndicators-5" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
         <?php foreach ($imagens as $index => $jogo): ?>
-          <li data-target="#carouselExampleIndicators-5" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
+          <?php if ($jogo['preco'] > 1 && $jogo['preco'] <= 10): ?>
+            <li data-target="#carouselExampleIndicators-5" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
+          <?php endif; ?>
         <?php endforeach; ?>
       </ol>
       <div class="carousel-inner">
         <?php
-        $chunks = array_chunk($imagens, 3); // Divide as imagens em grupos de 3
-        foreach ($chunks as $index => $chunk):
-          ?>
-          <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-            <div class="container">
-              <div class="row">
-                <?php foreach ($chunk as $jogo): ?>
+        foreach ($imagens as $index => $jogo):
+          if ($jogo['preco'] > 1 && $jogo['preco'] <= 10): // Filtrar apenas jogos com preço entre 1 e 10
+            ?>
+            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+              <div class="container">
+                <div class="row">
                   <div class="col-sm-4">
                     <div class="cardj">
                       <div class="imagej">
                         <div class="realimg">
-                        <img class="img-fluid w-100" src="<?= "../../formulario/upload_imagem/" . $jogo['imagem'] ?>" alt="<?= $jogo['nome'] ?>">
+                          <img class="img-fluid w-100" src="<?= "../../formulario/upload_imagem/" . $jogo['imagem'] ?>" alt="<?= $jogo['nome'] ?>">
                         </div>
                       </div>
                       <div class="gamen">
@@ -366,17 +366,17 @@
                       </div>
                     </div>
                   </div>
-                <?php endforeach; ?>
+                </div>
               </div>
             </div>
-          </div>
+          <?php endif; ?>
         <?php endforeach; ?>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators-5" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
         <span class="sr-only">Previous</span>
       </a>
-      <a class="carousel-control-next" href="#carouselExampleIndicators-" role="button" data-slide="next">
+      <a class="carousel-control-next" href="#carouselExampleIndicators-5" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
@@ -412,29 +412,6 @@
 
         <div class="ver2">
           <h3>Mais vendidos</h3>
-          <div class="jogos">
-            <p>jogo 1</p>
-          </div>
-
-          <div class="jogos">
-            <p>jogo 2</p>
-          </div>
-
-          <div class="jogos">
-            <p>jogo 3</p>
-          </div>
-
-          <div class="jogos">
-            <p>jogo 4</p>
-          </div>
-
-          <div class="jogos">
-            <p>jogo 5</p>
-          </div>
-
-        </div>
-        <div class="ver2">
-          <h3>Mais jogados</h3>
           <div class="jogos">
             <p>jogo 1</p>
           </div>
