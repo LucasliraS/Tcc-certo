@@ -59,26 +59,25 @@ body{
     color: #fff;
     border-radius: 5px;
     transition: background-color 0.3s ease, color 0.3s ease;
+    font-size: 18px;
 
 }
 
-
-
 .conteudo{
     height: 20vh;
-  
     margin-top: 60px;
 }
 
 .upload_bottun{
-    height: 5vh;
+    height: 4vh;
     cursor: pointer;
+    margin-top: 50px;
 
 }
 
 .upload{
     width: 30%;
-    height: 5vh;
+    height: 4vh;
     border: none;
     cursor: pointer;
     font-size: large;
@@ -86,22 +85,41 @@ body{
     background-color: #e4a700;;
     color: #fff;
 }
-
-/* Estilo do botão quando está ativo */
-.tablinks:active {
-    background-color: #e74c3c;
-  }
   
-  /* Estilo do botão quando está com foco */
-  .tablinks:focus {
+.tablinks:focus {
     outline: none;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }
   
-  /* Estilo do botão quando está com o mouse por cima */
-  .tablinks:hover {
+.tablinks:hover {
     background-color: #25597c;
   }
 
+h3{
+    font-size: 20px;
+    color: #807e7e;
+}
 
+.conquistas{
+    max-height: 29vh;
+    width: 100%;
 
+}
+
+.div-achi{
+    width: 18%;
+    min-height: 20vh;
+
+}
+
+.div-achi, .achiv{
+    display: inline-block;
+    box-sizing: border-box;
+    vertical-align: middle;
+    margin-right: 30px;
+}
+
+p{
+    font-size: larger;
+
+}
