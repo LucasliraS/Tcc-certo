@@ -3,7 +3,10 @@ body{
     display: flex;
     background-color: #1d1d25;
     color: #fff;
+    font-family: 'Motiva Sans', sans-serif;
 }
+
+     
 
 .box{
     width: 80%;
