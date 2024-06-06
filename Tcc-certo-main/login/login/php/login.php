@@ -14,7 +14,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recebe os dados do formulário e sanitiza-os
     $email = mysqli_real_escape_string($conexao, $_POST['email']);
     $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
-    $nome = mysqli_real_escape_string($conexao, $_POST['nome']);
 
 
     // Consulta SQL usando prepared statement para evitar injeção de SQL
