@@ -99,7 +99,8 @@
               <div class="row">
                 <?php foreach ($chunk as $jogo): ?>
                   <div class="col-sm-4">
-                 <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>">
+                  <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode(implode(',', $jogo['imagens'])) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($jogo['logo_jogo']) ?>">
+
 
                     <div class="cardj">
                       <div class="imagej">
@@ -156,7 +157,7 @@
                 <?php foreach ($chunk as $jogo): ?>
                   <div class="col-sm-4">
                     <!-- Início do link para a página ../../pag-game/html/pag-game.html -->
-                   <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>">
+                    <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode(implode(',', $jogo['imagens'])) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($jogo['logo_jogo']) ?>">
 
                       <div class="cardj">
                         <div class="imagej">
@@ -360,8 +361,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-sm-4">
-                 <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>">
-
+                  <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode(implode(',', $jogo['imagens'])) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($jogo['logo_jogo']) ?>">
                     <div class="cardj">
                       <div class="imagej">
                         <div class="realimg">
