@@ -1,9 +1,23 @@
 <?php
-
+session_start();
+if(isset($_SESSION['id'])) {
+    $id = $_SESSION['id'];
+    
+    // Conectar ao banco de dados
     $pdo = new PDO('mysql:host=localhost;dbname=cadastro', 'root', '');
-    $pdo-> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Consulta SQL para obter o nome do usuário com base no ID
+    $sql_code = "SELECT nome FROM usuario WHERE id = :id";
+    $prepare = $pdo->prepare($sql_code);
+    $prepare->bindParam(':id', $id);
+    $prepare->execute();
+    
+    // Obter resultados
+    $usuario = $prepare->fetch(PDO::FETCH_ASSOC);
+    $nome = $usuario['nome'];
+}
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -33,38 +47,15 @@
     
   </div>
 
-
-  <?php
-
-
-    $id = 1;
-
-    $sql_code = "SELECT * FROM usuario WHERE id = '$id'";
-    $prepare = $pdo->prepare($sql_code);
-    $count = $prepare->execute();
-
-    $usuarios = $prepare->fetchAll();
-
-
-    
-
-  ?>
-
     <div class="box">
         <div class="usuario">
             <div class="imgusuario">
                 <img src="../imagens/user.png" class="fotouser" alt="usuario">
             </div>
-            <div class="nome"> 
-
-                <?php
-                    foreach($usuarios as $usuario){?>
-                        <p class="nomeu">Olá, <?=  $usuario['nome'] ?>!</p>
-
-                    <?php
-                    }
-                ?>
-                
+            <div class="nome">
+                <?php if(isset($nome)): ?>
+                    <p class="nomeu">Olá, <?= $nome ?>!</p>
+                <?php endif; ?>
             </div>
         </div>
 
