@@ -35,7 +35,7 @@ if(isset($_SESSION['id'])) {
     <header class="header">
       <img class="logo" src="" alt="Joystick Jungle">
       <nav class="navbar">
-        <a href="#" class="a">Inicio</a>
+        <a href="../index2/html/index.php" class="a">Inicio</a>
         <a href="#" class="a">Sobre</a>
         <a href="#" class="a">Suporte</a>
         <div class="pesquisar" id="divpesquisa" onclick="abrirpesquisa(event)">
