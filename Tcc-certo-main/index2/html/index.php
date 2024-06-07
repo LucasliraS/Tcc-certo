@@ -14,7 +14,7 @@
   <link rel="stylesheet" href="../css/index.css">
 
   
-  <title>Hello, world!</title>
+  <title>Inicio</title>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
         <a href="../index/html/index.php" class="a">Inicio</a>
         <a href="#" class="a">Sobre</a>
         <a href="#" class="a">Suporte</a>
-        <a href="../../tela-usuario/usuario.php" class="a">Usuario</a>
+        <a href="../../tela-usuario/usuario.php" class="a">Usuário</a>
         <div class="pesquisar" id="divpesquisa" onclick="abrirpesquisa(event)">
           <input type="text" id="Buscar" placeholder="Buscar" class="Buscar"/>
           <!--<img class="ipesq" id="pesquisarmuitoshow" src="../../index/imagens/lupa.png" alt="pesquisar">-->
@@ -394,45 +394,84 @@
 
 
       <div class="box2">
-      <div class="ver2 esq">
-    <h3>Em breve</h3>
-    <?php
-    // Consulta SQL para buscar os jogos marcados como "em_breve"
-    $sql = "SELECT Imagem_jogo FROM Jogo WHERE status_jogo = 'em_breve' ORDER BY id DESC";
-    $resultado = mysqli_query($conexao, $sql);
+        <div class="ver2 esq">
+          <h3>Em breve</h3>
+          <?php
+          // Consulta SQL para buscar os jogos marcados como "em_breve"
+          $sql = "SELECT Imagem_jogo FROM Jogo WHERE status_jogo = 'em_breve' ORDER BY id DESC";
+          $resultado = mysqli_query($conexao, $sql);
 
-    // Contador para limitar o número de imagens a serem exibidas
-    $contador = 0;
+          // Contador para limitar o número de imagens a serem exibidas
+          $contador = 0;
 
-    // Verifica se há resultados
-    if (mysqli_num_rows($resultado) > 0) {
-        // Loop através dos resultados
-        while ($row = mysqli_fetch_assoc($resultado)) {
-            // Verifica se ainda podemos exibir mais imagens
-            if ($contador < 5) {
-                // Exibe a imagem
-                echo '<div class="jogos">';
-                echo '<img src="../../formulario/upload_imagem/' . $row['Imagem_jogo'] . '" alt="Imagem do jogo">';
-                echo '</div>';
-                $contador++;
-            }
-        }
-    } else {
-        echo '<p>Nenhuma imagem de jogo em breve no momento.</p>';
-    }
-    ?>
+          // Verifica se há resultados
+          if (mysqli_num_rows($resultado) > 0) {
+              // Loop através dos resultados
+              while ($row = mysqli_fetch_assoc($resultado)) {
+                  // Verifica se ainda podemos exibir mais imagens
+                  if ($contador < 5) {
+                      // Exibe a imagem
+                      echo '<div class="jogos">';
+                      echo '<img src="../../formulario/upload_imagem/' . $row['Imagem_jogo'] . '" alt="Imagem do jogo">';
+                      echo '</div>';
+                      $contador++;
+                  }
+              }
+          } else {
+              echo '<p>Nenhuma imagem de jogo em breve no momento.</p>';
+          }
+          ?>
+        </div>
 
-  <!-- Optional JavaScript -->
-  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
-    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-    crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
-    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-    crossorigin="anonymous"></script>
+
+        <div class="ver2">
+          <h3>Mais vendidos</h3>
+          <div class="jogos">
+            <p>jogo 1</p>
+          </div>
+          <div class="jogos">
+            <p>jogo 2</p>
+          </div>
+          <div class="jogos">
+            <p>jogo 3</p>
+          </div>
+          <div class="jogos">
+            <p>jogo 4</p>
+          </div>
+          <div class="jogos">
+            <p>jogo 5</p>
+          </div>
+        </div>
+        <div class="ver2">
+          <h3>Mais jogados</h3>
+          <div class="jogos">
+            <p>jogo 1</p>
+          </div>
+          <div class="jogos">
+            <p>jogo 2</p>
+          </div>
+          <div class="jogos">
+            <p>jogo 3</p>
+          </div>
+          <div class="jogos">
+            <p>jogo 4</p>
+          </div>
+          <div class="jogos">
+            <p>jogo 5</p>
+          </div>
+      </div>
+
+      <!-- Optional JavaScript -->
+      <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
     
 </body>
 
