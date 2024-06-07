@@ -39,7 +39,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if (mysqli_query($conexao, $query_cadastro)) {
                 echo "Cadastro realizado com sucesso!";
                 // Redireciona para a pagina de sucesso
-                header("Location: sucesso.php");
+                header("Location: ../../index/html/index.php");
                 exit();
             } else {
                 echo "Erro ao cadastrar usuário: " . mysqli_error($conexao);
