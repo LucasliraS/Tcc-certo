@@ -1,9 +1,8 @@
 <?php
 session_start();
 
-// Verifica se o formulário foi enviado
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Conexão com o banco de dados MySQL usando o XAMPP
+    // Conexão com o banco de dados MySQL
     $conexao = mysqli_connect("localhost", "root", "", "cadastro");
 
     // Verifica se a conexão foi bem sucedida
@@ -12,28 +11,38 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         exit();
     }
 
-    // Recebe os dados do formulário
-    $email = $_POST['email'];
-    $senha = $_POST['senha'];
+    // Recebe os dados do formulário e sanitiza-os
+    $email = mysqli_real_escape_string($conexao, $_POST['email']);
+    $senha = mysqli_real_escape_string($conexao, $_POST['senha']);
 
-
-
-
-
-    //NÃO MEXE MARCO, ESSA PARTE PRA BAIXO É DO BANCO DE DADOS, NAO MEXE PORRA (SE FOR MEXER AVISA)
-    // Consulta SQL para verificar as credenciais do usuário
-    $query = "SELECT * FROM usuarios WHERE email = '$email' AND senha = '$senha'";
-    $resultado = mysqli_query($conexao, $query);
+    // Consulta SQL usando prepared statement para evitar injeção de SQL
+    $query = "SELECT id FROM usuario WHERE email = ? AND senha = ?";
+    $stmt = mysqli_prepare($conexao, $query);
+    mysqli_stmt_bind_param($stmt, "ss", $email, $senha);
+    mysqli_stmt_execute($stmt);
+    
+    // Armazena o resultado da consulta
+    mysqli_stmt_store_result($stmt);
 
     // Verifica se encontrou um usuário com as credenciais fornecidas
-    if (mysqli_num_rows($resultado) == 1) {
-        // Inicia a sessão e redireciona para a página inicial, por exemplo
+    if (mysqli_stmt_num_rows($stmt) == 1) {
+        // Associa o resultado da consulta à variável $id
+        mysqli_stmt_bind_result($stmt, $id);
+        mysqli_stmt_fetch($stmt);
+
+        // Inicia a sessão e armazena o ID e email do usuário
+        $_SESSION['id'] = $id;
         $_SESSION['email'] = $email;
-        header("Location: pagina_inicial.php");
+
+        // Redireciona para a página inicial do usuário
+        header("Location: ../../tela-usuario/usuario.php");
         exit();
     } else {
         echo "E-mail ou senha incorretos.";
     }
+
+    // Fecha o statement
+    mysqli_stmt_close($stmt);
 
     // Fecha a conexão com o banco de dados
     mysqli_close($conexao);
