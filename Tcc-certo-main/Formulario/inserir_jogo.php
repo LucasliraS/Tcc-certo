@@ -57,14 +57,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Move a logo para o diretório especificado
             if (empty($error_message)) {
                 // Move a logo para o diretório especificado
-                $extensao_logo_jogo = pathinfo($_FILES['logo_jogo']['name'], PATHINFO_EXTENSION);
-                $nome_logo_jogo = uniqid() . '_logo.' . $extensao_logo_jogo; // Nome único para a logo com a extensão original
+                $nome_logo_jogo = $_FILES['logo_jogo']['name']; // Nome original do arquivo
                 if (!move_uploaded_file($_FILES['logo_jogo']['tmp_name'], $diretorio_logo . $nome_logo_jogo)) {
                     $error_message = "Erro ao mover a logo para o diretório de destino.";
                 }
             }
             
-
             // Inicializa uma string para armazenar os nomes das imagens
             $imagens_jogo = [];
 
