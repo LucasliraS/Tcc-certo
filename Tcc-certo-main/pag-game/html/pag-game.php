@@ -30,7 +30,6 @@
     <!--fim Navbar-->
 
     <?php
-    
     // Recuperando os parâmetros da URL
     $nomeJogo = isset($_GET['nome']) ? htmlspecialchars($_GET['nome']) : 'Nome';
     $precoJogo = isset($_GET['preco']) ? htmlspecialchars($_GET['preco']) : '9,99';
@@ -38,6 +37,7 @@
     $descricaoJogo = isset($_GET['descricao']) ? htmlspecialchars($_GET['descricao']) : 'Descrição não disponível.';
     $logo_jogo = isset($_GET['logo_jogo']) ? htmlspecialchars($_GET['logo_jogo']) : 'nao_disponivel.svg';
     $imagensJogo = isset($_GET['imagem']) ? explode(',', htmlspecialchars($_GET['imagem'])) : ['default1.svg', 'default2.svg', 'default3.svg'];
+    $arquivo_jogo = isset($_GET['arquivo_jogo']) ? htmlspecialchars($_GET['arquivo_jogo']) : '';
     ?>
 
     <!--NOME DO JOGO E CARROSEL-->
@@ -76,13 +76,8 @@
         <p class="pos" id="game-description">DESCRIÇÃO: <?= $descricaoJogo ?></p>
     </div>
     <!--FIM DIV QUE FAZ A DESCRIÇÃO-->
-    <?php
-echo '<pre>';
-print_r($_GET);
-echo '</pre>';
-    ?>
     <div class="botao">
-        <button class="stl-botao">COMPRE AGORA</button>
+        <button class="stl-botao" onclick="window.location.href='../../formulario/upload_rar/<?= $arquivo_jogo ?>'">COMPRE AGORA</button> <!-- Botão de download -->
 
         <p></p>
         <div class="preco">
@@ -94,6 +89,5 @@ echo '</pre>';
         <p class="gen1">Gêneros</p>
         <p class="gen" id="game-genres"><?= $generoJogo ?></p>
     </div>
-  
 </body>
 </html>
