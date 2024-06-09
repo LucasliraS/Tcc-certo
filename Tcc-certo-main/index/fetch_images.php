@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
 }
 
 // Consulta para buscar os jogos, suas imagens, nomes, preços, gêneros e descrições
-$sql = "SELECT id, Nome, imagem_jogo, Preco, Genero, Descricao, logo_jogo FROM Jogo WHERE status_jogo!='em_breve'";
+$sql = "SELECT id, Nome, imagem_jogo, Preco, Genero, Descricao, logo_jogo, arquivo_jogo FROM Jogo WHERE status_jogo!='em_breve'";
 $resultado = mysqli_query($conexao, $sql);
 
 $imagens = [];
@@ -21,7 +21,8 @@ if ($resultado) {
             'preco' => $row['Preco'],
             'genero' => $row['Genero'],
             'descricao' => $row['Descricao'],
-            'logo_jogo' => $row ['logo_jogo']
+            'logo_jogo' => $row['logo_jogo'], // Assumindo que o caminho correto para a logo está aqui
+            'arquivo_jogo' => $row['arquivo_jogo'] // Adicionando o caminho do arquivo do jogo
         ];
     }
 } else {
@@ -57,6 +58,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['game_id'])) {
 }
 ?>
 
+?>
+
+<!-- Exemplo de carrossel -->
 <ol class="carousel-indicators">
     <?php foreach ($imagens as $index => $jogo): ?>
         <?php if ($index < 3): ?>
@@ -70,11 +74,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['game_id'])) {
     foreach ($imagens as $index => $jogo):
         if ($contador < 3): // Limita a 3 imagens
             $imagePath = "../../formulario/upload_imagem/" . $jogo['imagem'];
+            $logoPath = "../../formulario/upload_logo/" . $jogo['logo_jogo']; // Caminho correto para a logo
             ?>
             <div class="carousel-item <?= $contador === 0 ? 'active' : '' ?>">
                 <img class="d-block w-100" src="<?= $imagePath ?>" alt="<?= $jogo['nome'] ?>" style="object-fit: <?= $contador === 0 ? 'cover' : 'contain' ?>">
-                <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode(implode(',', $jogo['imagens'])) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($jogo['logo_jogo']) ?>">
-
+                <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($logoPath) ?>&arquivo_jogo=<?= urlencode($jogo['arquivo_jogo']) ?>"> <!-- Passando arquivo_jogo -->
                     Ver mais
                 </a>
             </div>
