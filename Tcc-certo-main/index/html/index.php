@@ -24,9 +24,9 @@
     <header class="header">
       <img class="logo" src="../../imagens/Logo.jpeg" alt="Joystick Jungle">
       <nav class="navbar">
-        <a href="../index/html/index.php" class="a">Inicio</a>
-        <a href="#" class="a">Sobre</a>
-        <a href="#" class="a">Suporte</a>
+        <a href="#" class="a">Inicio</a>
+        <a href="../../infor/html/info.html" class="a">Sobre</a>
+        <a href="../../suporte/html/suporte.html" class="a">Suporte</a>
         <a href="../../login/html/login.html" class="a">Iniciar sessão</a>
         <div class="pesquisar" id="divpesquisa" onclick="abrirpesquisa(event)">
           <input type="text" id="Buscar" placeholder="Buscar" class="Buscar"/>
@@ -81,7 +81,7 @@
   <div class="destaques">
     <div class="vermais">
       <h2 class="titulo">Lançamentos</h2>
-      <button class="botao" type="submit">VER MAIS</button>
+      <a href="../ver_mais-lancamentos.php"><button class="botao" type="submit">VER MAIS</button></a>
     </div>
     <div id="carouselExampleIndicators-2" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
@@ -135,7 +135,7 @@
   <div class="destaques">
     <div class="vermais">
       <h2 class="titulo">Jogos populares</h2>
-      <button class="botao" type="submit">VER MAIS</button>
+      <a href="../ver_mais-lancamentos.php"><button class="botao" type="submit">VER MAIS</button></a>
     </div>
     <div id="carouselExampleIndicators-3" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
@@ -187,158 +187,108 @@
   </div>
 </div>
 
-  <div class="tamanhoS3">
-    <div class="destaques">
-      <div class="vermais">
-        <h2 class="titulo">Procurar por categorias</h2>
-      </div>
+<div class="tamanhoS3">
+  <div class="destaques">
+    <div class="vermais">
+      <h2 class="titulo">Procurar por categorias</h2>
+    </div>
     <div id="carouselExampleIndicators-4" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
         <li data-target="#carouselExampleIndicators-4" data-slide-to="0" class="active"></li>
         <li data-target="#carouselExampleIndicators-4" data-slide-to="1"></li>
-        <li data-target="#carouselExampleIndicators-4" data-slide-to="2"></li>
       </ol>
-        <div class="carousel-inner">
-          <div class="carousel-item active">
-
-            <div class="conteudo">
-              <div class="row">
-
-                <div class="col-sm">
-                  <div class="cardc">
-                    <div class="imageg">
-                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
-                    </div>
-                    <div class="gameng">
-                      <h2 class="nomec">Ação</h2>
-                    </div>
-                  </div>
-                </div>
-
-                <div class="col-sm">
-                  <div class="cardc">
-                    <div class="imageg">
-                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
-                    </div>
-                    <div class="gameng">
-                      <h2 class="nomec">Aventura</h2>
-                    </div>
-                  </div>
-                </div>
-                    
-                <div class="col-sm">
-                  <div class="cardc">
-                    <div class="imageg">
-                      <img class="categoria" src="../../imagens/rpg.jpg" alt="Ação">                     
-                    </div>
-                    <div class="gameng">
-                      <h2 class="nomec">RPG</h2>
-                    </div>
-                  </div>
-                </div>
-
-              </div>
-            </div>
-              
-          </div>
-          <div class="carousel-item">
-            <div class="conteudo">
-              <div class="row">
-
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="conteudo">
+            <div class="row">
               <div class="col-sm">
-                  <div class="cardc">
-                    <div class="imageg">
-                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
-                    </div>
-                    <div class="gameng">
-                      <h2 class="nomec">Estratégia</h2>
-                    </div>
+                <div class="cardc">
+                  <div class="imageg">
+                    <a href="../ver_mais-lancamentos.php"><img class="categoria" src="../../imagens/acao.jpg" alt="Ação"></a>                     
+                  </div>
+                  <div class="gameng">
+                    <h2 class="nomec">Ação</h2>
                   </div>
                 </div>
-
-                <div class="col-sm">
-                  <div class="cardc">
-                    <div class="imageg">
-                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
-                    </div>
-                    <div class="gameng">
-                      <h2 class="nomec">Simulação</h2>
-                    </div>
-                  </div>
-                </div>
-                    
-                <div class="col-sm">
-                  <div class="cardc">
-                    <div class="imageg">
-                      <img class="categoria" src="../../imagens/fps.jpg" alt="Ação">                     
-                    </div>
-                    <div class="gameng">
-                      <h2 class="nomec">FPS</h2>
-                    </div>
-                  </div>
-                </div>
-
               </div>
-            </div>
-          </div>
-          <div class="carousel-item">
-            <div class="conteudo">
-              <div class="row">
-
-                <div class="col-sm">
-                  <div class="cardc">
-                    <div class="imageg">
-                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
-                    </div>
-                    <div class="gameng">
-                      <h2 class="nomec">Puzzle</h2>
-                    </div>
+              <div class="col-sm">
+                <div class="cardc">
+                  <div class="imageg">
+                  <a href="../ver_mais-lancamentos.php"><img class="categoria" src="../../imagens/aventura.jpg" alt="Aventura"></a>                     
+                  </div>
+                  <div class="gameng">
+                    <h2 class="nomec">Aventura</h2>
                   </div>
                 </div>
-
-                <div class="col-sm">
-                  <div class="cardc">
-                    <div class="imageg">
-                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
-                    </div>
-                    <div class="gameng">
-                      <h2 class="nomec">Medroidvania</h2>
-                    </div>
+              </div>
+              <div class="col-sm">
+                <div class="cardc">
+                  <div class="imageg">
+                  <a href="../ver_mais-lancamentos.php"><img class="categoria" src="../../imagens/rpg.jpg" alt="RPG"></a>                     
+                  </div>
+                  <div class="gameng">
+                    <h2 class="nomec">RPG</h2>
                   </div>
                 </div>
-                    
-                <div class="col-sm">
-                  <div class="cardc">
-                    <div class="imageg">
-                      <img class="categoria" src="../../imagens/acao.jpg" alt="Ação">                     
-                    </div>
-                    <div class="gameng">
-                      <h2 class="nomec">Jogos de Luta</h2>
-                    </div>
-                  </div>
-                </div>
-
               </div>
             </div>
           </div>
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators-4" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#carouselExampleIndicators-4" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-    </div>
+        <div class="carousel-item">
+          <div class="conteudo">
+            <div class="row">
+              <div class="col-sm">
+                <div class="cardc">
+                  <div class="imageg">
+                  <a href="../ver_mais-lancamentos.php"><img class="categoria" src="../../imagens/estrategia.jpg" alt="Estratégia"></a>                     
+                  </div>
+                  <div class="gameng">
+                    <h2 class="nomec">Estratégia</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="cardc">
+                  <div class="imageg">
+                  <a href="../ver_mais-lancamentos.php"><img class="categoria" src="../../imagens/simulacao.jpg" alt="Simulação"></a>                     
+                  </div>
+                  <div class="gameng">
+                    <h2 class="nomec">Simulação</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="col-sm">
+                <div class="cardc">
+                  <div class="imageg">
+                  <a href="../ver_mais-lancamentos.php"><img class="categoria" src="../../imagens/fps.jpg" alt="FPS"></a>                     
+                  </div>
+                  <div class="gameng">
+                    <h2 class="nomec">FPS</h2>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleIndicators-4" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleIndicators-4" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
     </div>
   </div>
+</div>
+
 <!-- Promoçoes especias -->
 <div class="tamanhoS4">
   <div class="destaques">
     <div class="vermais">
       <h2 class="titulo">Promoções especiais</h2>
-      <button class="botao" type="submit">VER MAIS</button>
+      <a href="../ver_mais-lancamentos.php"><button class="botao" type="submit">VER MAIS</button></a>
     </div>
     <div id="carouselExampleIndicators-5" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
@@ -357,7 +307,7 @@
               <div class="container">
                 <div class="row">
                   <div class="col-sm-4">
-<a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($logoPath) ?>">                    <div class="cardj">
+                    <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($logoPath) ?>">                    <div class="cardj">
                       <div class="imagej">
                         <div class="realimg">
                           <img class="img-fluid w-100" src="<?= "../../formulario/upload_imagem/" . $jogo['imagem'] ?>" alt="<?= $jogo['nome'] ?>">
@@ -419,24 +369,7 @@
         </div>
 
 
-        <div class="ver2">
-          <h3>Mais vendidos</h3>
-          <div class="jogos">
-            <p>jogo 1</p>
-          </div>
-          <div class="jogos">
-            <p>jogo 2</p>
-          </div>
-          <div class="jogos">
-            <p>jogo 3</p>
-          </div>
-          <div class="jogos">
-            <p>jogo 4</p>
-          </div>
-          <div class="jogos">
-            <p>jogo 5</p>
-          </div>
-        </div>
+      
         <div class="ver2">
           <h3>Mais jogados</h3>
           <div class="jogos">
