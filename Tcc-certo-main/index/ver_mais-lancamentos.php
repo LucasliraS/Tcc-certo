@@ -38,7 +38,7 @@
                 <select class="botao-filtro" id="categoryFilter" onchange="filterGames()">
                     <option value="all">Todas as categorias</option>
                     <option value="aventura">Aventura</option>
-                    <option value="ação">Ação</option>
+                    <option value="acao">Ação</option>
                     <option value="rpg">Rpg</option>
                     <option value="estrategia">Estratégia</option>
                     <option value="puzzle">Puzzle</option>

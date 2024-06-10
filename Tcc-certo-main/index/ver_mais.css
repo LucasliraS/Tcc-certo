@@ -111,3 +111,7 @@
     padding-bottom: 70px;
 
 }
+a {
+    text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+  }
+  
