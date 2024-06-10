@@ -147,12 +147,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     <div class="container_input">
                         <label for="generoSelect">Gênero</label>
                         <select class="formulario_input" name="genero" id="generoSelect" required>
-                            <option value="Ação">Ação</option>
-                            <option value="Aventura">Aventura</option>
-                            <option value="Rpg">RPG</option>
-                            <option value="Estrategia">Estratégia</option>
-                            <option value="Simulacao">Simulação</option>
-                            <option value="Fps">FPS</option>
+                            <option value="acao">Ação</option>
+                            <option value="aventura">Aventura</option>
+                            <option value="rpg">RPG</option>
+                            <option value="estrategia">Estratégia</option>
+                            <option value="simulacao">Simulação</option>
+                            <option value="fps">FPS</option>
                         </select>
                     </div>
 
