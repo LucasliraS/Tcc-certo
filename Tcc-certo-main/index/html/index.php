@@ -240,7 +240,7 @@
               <div class="col-sm">
                 <div class="cardc">
                   <div class="imageg">
-                  <a href="../ver_mais-lancamentos.php"><img class="categoria" src="../../imagens/estrategia.jpg" alt="Estratégia"></a>                     
+                  <a href="../ver_mais-lancamentos.php"><img class="categoria" src="../../imagens/estrategia.png" alt="Estratégia"></a>                     
                   </div>
                   <div class="gameng">
                     <h2 class="nomec">Estratégia</h2>
