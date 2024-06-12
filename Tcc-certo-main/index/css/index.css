@@ -15,6 +15,7 @@ body{
   font-size: 30px;
 }
 
+
 h2{
   color: #ffffff;
 }
@@ -172,13 +173,13 @@ h3{
 }
 
 .cardj {
-  height: 310px;
-  width: 100%;
-  flex-direction: column;
-  justify-content: center;
-  text-align: center;
-  background-color: #f2f2f2;
-  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    height: 40vh;
+    width: 100%;
+    border-radius: 10px;
+    overflow: hidden;
+    background-color: #fff;
   
 }
 
@@ -230,16 +231,22 @@ h3{
 }
 
 .imagej{
-  width: 100%; /* Define a largura como 100% do contêiner pai */
-  height: 220px; /* Define uma altura fixa para todas as imagens */
-  object-fit: cover; /* Redimensiona a imagem para cobrir toda a área disponível */
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+  border-bottom: 1px solid;
+  height: 25vh; /* Redimensiona a imagem para cobrir toda a área disponível */
+}
+
+.imagej img{
+    height: 4vh;
+
 }
 
 .gamen{
-  height: 30%;
-  border-bottom-right-radius: 10px;
-  border-bottom-left-radius: 10px;
+  padding: 2px 16px;
+  text-align: center;
   background-color: #e4a700;
+  height: 15vh;
 
 }
 
