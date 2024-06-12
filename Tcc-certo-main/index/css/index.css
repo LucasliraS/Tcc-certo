@@ -362,3 +362,11 @@ a {
 a:hover {
   text-decoration: none; /* Remove o sublinhado ao passar o mouse */
 }
+
+.embreve{
+  height: 10vh;
+  margin-left: 20px;
+  margin-top: 10px;
+  border-radius: 10px;
+
+}

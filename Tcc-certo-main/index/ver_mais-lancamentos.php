@@ -68,7 +68,7 @@
     }
 
     // Consulta para selecionar os jogos
-    $sql = "SELECT * FROM Jogo";
+    $sql = "SELECT * FROM Jogo WHERE status_jogo!='em_breve'";
     $result = $conexao->query($sql);
 
     // Se houver resultados, exibe os jogos

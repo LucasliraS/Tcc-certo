@@ -357,7 +357,7 @@
                   if ($contador < 5) {
                       // Exibe a imagem
                       echo '<div class="jogos">';
-                      echo '<img src="../../formulario/upload_imagem/' . $row['Imagem_jogo'] . '" alt="Imagem do jogo">';
+                      echo '<img class="embreve" src="../../formulario/upload_imagem/' . $row['Imagem_jogo'] . '" alt="Imagem do jogo">';
                       echo '</div>';
                       $contador++;
                   }
