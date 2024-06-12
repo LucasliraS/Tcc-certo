@@ -73,12 +73,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['game_id'])) {
     $contador = 0;
     foreach ($imagens as $index => $jogo):
         if ($contador < 3): // Limita a 3 imagens
-            $imagePath = "../../formulario/upload_imagem/" . $jogo['imagem'];
             $logoPath = "../../formulario/upload_logo/" . $jogo['logo_jogo']; // Caminho correto para a logo
             ?>
             <div class="carousel-item <?= $contador === 0 ? 'active' : '' ?>">
-                <img class="d-block w-100" src="<?= $imagePath ?>" alt="<?= $jogo['nome'] ?>" style="object-fit: <?= $contador === 0 ? 'cover' : 'contain' ?>">
-                <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($logoPath) ?>&arquivo_jogo=<?= urlencode($jogo['arquivo_jogo']) ?>"> <!-- Passando arquivo_jogo -->
+                <img class="d-block w-100" src="<?= $logoPath ?>" alt="<?= $jogo['nome'] ?>" style="object-fit: <?= $contador === 0 ? 'cover' : 'contain' ?>">
+                <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($jogo['logo_jogo']) ?>&arquivo_jogo=<?= urlencode($jogo['arquivo_jogo']) ?>"> <!-- Passando arquivo_jogo -->
                     Ver mais
                 </a>
             </div>

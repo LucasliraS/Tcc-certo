@@ -102,7 +102,7 @@
                   <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($logoPath) ?>&arquivo_jogo=<?= urlencode($jogo['arquivo_jogo']) ?>"> <!-- Passando arquivo_jogo -->                    <div class="cardj">
                       <div class="imagej">
                         <div class="realimg">
-                        <img class="img-fluid w-100" src="<?= "../../formulario/upload_imagem/" . $jogo['imagem'] ?>" alt="<?= $jogo['nome'] ?>">
+                        <img class="img-fluid w-100" src="<?= "../../formulario/upload_logo/" . $jogo['logo_jogo'] ?>" alt="<?= $jogo['nome'] ?>">
                         </div>
                       </div>
                       <div class="gamen">
@@ -158,7 +158,7 @@
                       <div class="cardj">
                         <div class="imagej">
                           <div class="realimg">
-                            <img class="img-fluid w-100" src="<?= "../../formulario/upload_imagem/" . $jogo['imagem'] ?>" alt="<?= $jogo['nome'] ?>">
+                            <img class="img-fluid w-100" src="<?= "../../formulario/upload_logo/" . $jogo['logo_jogo'] ?>" alt="<?= $jogo['nome'] ?>">
                           </div>
                         </div>
                         <div class="gamen">
@@ -310,7 +310,7 @@
                     <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($logoPath) ?>">                    <div class="cardj">
                       <div class="imagej">
                         <div class="realimg">
-                          <img class="img-fluid w-100" src="<?= "../../formulario/upload_imagem/" . $jogo['imagem'] ?>" alt="<?= $jogo['nome'] ?>">
+                          <img class="img-fluid w-100" src="<?= "../../formulario/upload_logo/" . $jogo['logo_jogo'] ?>" alt="<?= $jogo['nome'] ?>">
                         </div>
                       </div>
                       <div class="gamen">

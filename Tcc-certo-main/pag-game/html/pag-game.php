@@ -5,13 +5,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
-    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/pag-game.css">
     <link rel="stylesheet" href="../../navbar/navbar.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLzBOH5WyVG7E1a9o9TRAKSCAshh5OjXtM+Pl6Cn39U69f4c44GEgXK" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js" integrity="sha384-p5VIzkrgU8Hok1frZG+Gz5qkLMV23RJkgHKt+H94eY+FZz6TtQqZ9a6M4+nh6I5Y" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-4PCWtJkVDoZFhpUQ5s3HrNsGkp36Aw9Xxf+lgD7ZXMfUI1FsbGCpup30cKpxK6G4" crossorigin="anonymous"></script>
 </head>
-  
 <body>
     <!--Navbar-->
     <div class="c">
@@ -42,7 +42,7 @@
     <h1 class="nomej" id="nomeJogo"><?= $nomeJogo ?></h1>
 
     <div class="ffvgf">
-        <div id="carouselExampleIndicators" class="carousel slide">
+        <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
             <ol class="carousel-indicators">
                 <?php foreach ($imagensJogo as $index => $imagem): ?>
                     <li data-target="#carouselExampleIndicators" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
