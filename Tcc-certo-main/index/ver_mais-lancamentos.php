@@ -28,11 +28,7 @@
     </div>
     <!--fim Navbar-->
 
-    <div class="titulo">
-        <h1>Jogos Lançamentos</h1>
-    </div>
-
-    <div class="box">
+<div class="box">
         <div class="filter-container">
             <div class="filtro">
                 <select class="botao-filtro" id="categoryFilter" onchange="filterGames()">
@@ -56,8 +52,6 @@
         </div>
     
 
-        <div class="jogos">
-        
         <div class="jogos">
     <?php
     $conexao = mysqli_connect("localhost", "root", "", "cadastro");

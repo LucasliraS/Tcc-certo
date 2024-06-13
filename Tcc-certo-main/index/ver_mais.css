@@ -87,13 +87,13 @@
 
 .filtro{
     border: solid;
-    height: 8vh;
+    height: 4.38vh;
     border-radius: 10px;
 
 }
 
 .filter-container{
-    height: 8vh;
+    height: 6vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -102,12 +102,25 @@
 }
 
 .botao-filtro{
-    border-radius: 10px;
-    height: 8vh;
-    font-size: 15px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-transform: uppercase;
+    background-color: rgb(193, 167, 0);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
 
 }
+
+.botao-filtro:hover {
+    background-color: #B666D2;
+  }
+
+  
 
 .titulo{
     display: flex;
@@ -116,6 +129,6 @@
 
 }
 a {
-    text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+    text-decoration: none;
   }
   
