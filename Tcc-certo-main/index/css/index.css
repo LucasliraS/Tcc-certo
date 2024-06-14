@@ -130,7 +130,7 @@ h3{
 }
 .tamanhoS1{
   width: 100%;
-  height: 34vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -141,7 +141,7 @@ h3{
 
 .tamanhoS2{
   width: 100%;
-  height: 34vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -152,7 +152,7 @@ h3{
 
 .tamanhoS3{
   width: 100%;
-  height: 34vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -163,7 +163,7 @@ h3{
 
 .tamanhoS4{
   width: 100%;
-  height: 34vh;
+  height: 40vh;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -237,10 +237,6 @@ h3{
   height: 25vh; /* Redimensiona a imagem para cobrir toda a área disponível */
 }
 
-.imagej img{
-    height: 4vh;
-
-}
 
 .gamen{
   padding: 2px 16px;
@@ -315,7 +311,7 @@ p{
 }
 .realimg img {
   max-width: 100%;
-  max-height: 220px; /* Ou qualquer outra altura máxima desejada */
+  max-height: 25vh; /* Ou qualquer outra altura máxima desejada */
   width: auto;
   height: auto;
 }
