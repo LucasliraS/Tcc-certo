@@ -1,16 +1,11 @@
 <!doctype html>
 <html lang="pt-br">
-
 <head>
-  <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
     integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-    
   <link rel="stylesheet" href="../css/index.css">
 
   
@@ -36,28 +31,9 @@
     </header>
     
   </div>
-
-
-
-
-
 <!--fim Navbar-->
 
-<!--<script>
-  function abrirpesquisa(event){
-    var pesq = document.getElementById("divpesquisa");
-    var imag = document.getElementById("pesquisarmuitoshow");
-    var newpes = document.createElement("input");
-    newpes.setAttribute("type", "search");
-    newpes.setAttribute("placeholder", "Buscar")
-    newpes.setAttribute("class", "buscar");
-    newpes.className = "Buscar";
-    imag.parentNode.removeChild(imag);
-    pesq.appendChild(newpes);
-    event.preventDefault();
-  }
-</script>-->
-  
+
 <div class="box">
   <div class="tamanhoS">
     <h2>Destaques da semana</h2>
@@ -127,7 +103,7 @@
       </a>
 
 
-
+<!--Jogos populares-->
     </div>
   </div>
 </div>
@@ -186,7 +162,7 @@
     </div>
   </div>
 </div>
-
+<!--Procurar por categorias-->
 <div class="tamanhoS3">
   <div class="destaques">
     <div class="vermais">
@@ -343,7 +319,7 @@
           <h3>Em breve</h3>
           <?php
           // Consulta SQL para buscar os jogos marcados como "em_breve"
-          $sql = "SELECT Imagem_jogo FROM Jogo WHERE status_jogo = 'em_breve' ORDER BY id DESC";
+          $sql = "SELECT Imagem_jogo, Nome FROM Jogo WHERE status_jogo = 'em_breve' ORDER BY id DESC";
           $resultado = mysqli_query($conexao, $sql);
 
           // Contador para limitar o número de imagens a serem exibidas
@@ -358,6 +334,7 @@
                       // Exibe a imagem
                       echo '<div class="jogos">';
                       echo '<img class="embreve" src="../../formulario/upload_imagem/' . $row['Imagem_jogo'] . '" alt="Imagem do jogo">';
+                      echo '<p class="nome-jogo">' . $row['Nome'] . '</p>';
                       echo '</div>';
                       $contador++;
                   }
@@ -371,25 +348,37 @@
 
       
         <div class="ver2">
-          <h3>Mais jogados</h3>
-          <div class="jogos">
-            <p>jogo 1</p>
-          </div>
-          <div class="jogos">
-            <p>jogo 2</p>
-          </div>
-          <div class="jogos">
-            <p>jogo 3</p>
-          </div>
-          <div class="jogos">
-            <p>jogo 4</p>
-          </div>
-          <div class="jogos">
-            <p>jogo 5</p>
+        <h3>Mais vistos</h3>
+        <?php
+          // Consulta SQL para buscar os jogos marcados como "em_breve"
+          $sql = "SELECT Imagem_jogo, Nome FROM Jogo WHERE status_jogo != 'em_breve' ORDER BY id DESC";
+          $resultado = mysqli_query($conexao, $sql);
+
+          // Contador para limitar o número de imagens a serem exibidas
+          $contador = 0;
+
+          // Verifica se há resultados
+          if (mysqli_num_rows($resultado) > 0) {
+              // Loop através dos resultados
+              while ($row = mysqli_fetch_assoc($resultado)) {
+                  // Verifica se ainda podemos exibir mais imagens
+                  if ($contador < 5) {
+                      // Exibe a imagem
+                      echo '<div class="jogos">';
+                      echo '<img class="embreve" src="../../formulario/upload_imagem/' . $row['Imagem_jogo'] . '" alt="Imagem do jogo">';
+                      echo '<p class="nome-jogo">' . $row['Nome'] . '</p>';
+                      echo '</div>';
+                      $contador++;
+                  }
+              }
+          } else {
+              echo '<p>Nenhuma imagem de jogo em breve no momento.</p>';
+          }
+          ?>
           </div>
       </div>
 
-      <!-- Optional JavaScript -->
+      
       <!-- jQuery first, then Popper.js, then Bootstrap JS -->
       <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
         integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
