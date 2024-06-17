@@ -373,3 +373,10 @@ a:hover {
   border-radius: 10px;
 
 }
+
+.embreve, .nome-jogo{
+  display: inline-block;
+  box-sizing: border-box;
+  vertical-align: middle;
+  margin-right: 30px;
+}
