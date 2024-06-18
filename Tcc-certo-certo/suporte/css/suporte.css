@@ -1,0 +1,26 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color:	#1d1d25;
+    font-family: 'Motiva Sans', sans-serif;
+}
+
+.navbar a{
+  left: 40%;
+}
+
+
+.pos{
+  margin-top: 100px;
+  width: 800px;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  }
+
+h2{
+    
+  color: white;
+  width: 800px;
+}
