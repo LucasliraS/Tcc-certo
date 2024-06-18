@@ -377,7 +377,7 @@ if(isset($_SESSION['id'])) {
         <h3>Mais vistos</h3>
         <?php
           // Consulta SQL para buscar os jogos marcados como "em_breve"
-          $sql = "SELECT Imagem_jogo, Nome FROM Jogo WHERE status_jogo != 'em_breve' ORDER BY id DESC";
+          $sql = "SELECT Imagem_jogo, Nome FROM Jogo WHERE status_jogo != 'em_breve' AND id >= 5 ORDER BY id DESC LIMIT 5";
           $resultado = mysqli_query($conexao, $sql);
 
           // Contador para limitar o número de imagens a serem exibidas

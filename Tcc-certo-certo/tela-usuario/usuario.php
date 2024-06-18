@@ -79,7 +79,7 @@ if(isset($_SESSION['id'])) {
                 <div id="tab3" class="tabcontent">
                     <h3>Fazer upload do Jogo</h3>
                     <div class="upload_bottun">
-                        <a class="link_up" href="../Formulario/formulario.html"><button class="upload" type="submit">Adicionar jogo</button></a>
+                        <a class="link_up" href="../Formulario/formulario.php"><button class="upload" type="submit">Adicionar jogo</button></a>
                     </div>
                 </div>
             </div>
