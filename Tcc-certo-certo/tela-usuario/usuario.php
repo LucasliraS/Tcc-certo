@@ -67,6 +67,10 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
                     <p class="nomeu">Olá, <?= $nome ?>!</p>
                 <?php endif; ?>
             </div>
+
+            <div class="logout">
+            <a href="logout.php"><button class="logoutb"  type="submit">Logout</button></a>
+            </div>
         </div>
 
         <div class="tabs">
@@ -96,8 +100,6 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
                 </div>
             </div>
         </div>
-
-        <a href="logout.php">Logout</a>
         
         
         <script src="script.js"></script> <!-- Script JavaScript -->

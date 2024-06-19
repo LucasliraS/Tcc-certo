@@ -67,7 +67,11 @@ body{
     font-family: 'Motiva Sans', sans-serif;
     font-weight: bold;
     font-size: 1rem;
-    
+    cursor: pointer;
+}
+
+.formulario_submit:hover{
+    background-color: #ecbf43;
 }
 
 .container_input{

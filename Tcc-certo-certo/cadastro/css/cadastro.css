@@ -69,7 +69,13 @@ body{
     font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     font-weight: bold;
     font-size: 1rem;
+    cursor: pointer;
     
+}
+
+.formulario_submit:hover{
+    background-color: #ecbf43;
+
 }
 
 .container_input{
