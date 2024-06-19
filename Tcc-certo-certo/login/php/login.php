@@ -33,6 +33,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Inicia a sessão e armazena o ID e email do usuário
         $_SESSION['id'] = $id;
         $_SESSION['email'] = $email;
+        $_SESSION['usuario_logado'] = true;
 
         // Redireciona para a página inicial do usuário
         header("Location: ../../tela-usuario/usuario.php");
@@ -46,5 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Fecha a conexão com o banco de dados
     mysqli_close($conexao);
+
+    
 }
 ?>

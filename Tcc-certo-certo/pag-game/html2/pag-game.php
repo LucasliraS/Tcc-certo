@@ -17,6 +17,11 @@ if(isset($_SESSION['id'])) {
     $usuario = $prepare->fetch(PDO::FETCH_ASSOC);
     $nome = $usuario['nome'];
 }
+
+if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true) {
+    header("location: ../login/html/login.html");
+    exit; 
+  }
 ?>
 
 

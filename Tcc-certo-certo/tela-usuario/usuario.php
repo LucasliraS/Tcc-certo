@@ -16,8 +16,20 @@ if(isset($_SESSION['id'])) {
     // Obter resultados
     $usuario = $prepare->fetch(PDO::FETCH_ASSOC);
     $nome = $usuario['nome'];
+
+
 }
+
+if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true) {
+    header("location: ../login/html/login.html");
+    exit; 
+}
+
 ?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -84,6 +96,9 @@ if(isset($_SESSION['id'])) {
                 </div>
             </div>
         </div>
+
+        <a href="logout.php">Logout</a>
+        
         
         <script src="script.js"></script> <!-- Script JavaScript -->
     </body>
