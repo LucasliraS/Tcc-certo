@@ -265,41 +265,44 @@
   <div class="destaques">
     <div class="vermais">
       <h2 class="titulo">Promoções especiais</h2>
-      <a href="../ver_mais-lancamentos.php"><button class="botao" type="submit">VER MAIS</button></a>
+      <a href="../ver_mais-lancamentos2.php"><button class="botao" type="submit">VER MAIS</button></a>
     </div>
     <div id="carouselExampleIndicators-5" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
-        <?php foreach ($imagens as $index => $jogo): ?>
-          <?php if ($jogo['preco'] > 1 && $jogo['preco'] <= 10): ?>
-            <li data-target="#carouselExampleIndicators-5" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
-          <?php endif; ?>
+        <?php 
+        $filteredImagens = array_filter($imagens, function($jogo) {
+          return $jogo['preco'] > 1 && $jogo['preco'] <= 10;
+        });
+        $chunks = array_chunk($filteredImagens, 3);
+        foreach ($chunks as $index => $chunk): ?>
+          <li data-target="#carouselExampleIndicators-5" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
         <?php endforeach; ?>
       </ol>
       <div class="carousel-inner">
-        <?php
-        foreach ($imagens as $index => $jogo):
-          if ($jogo['preco'] > 1 && $jogo['preco'] <= 10): // Filtrar apenas jogos com preço entre 1 e 10
-            ?>
-            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-              <div class="container">
-                <div class="row">
+        <?php foreach ($chunks as $index => $chunk): ?>
+          <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+            <div class="container">
+              <div class="row">
+                <?php foreach ($chunk as $jogo): ?>
                   <div class="col-sm-4">
-                    <a href="../../pag-game/html/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($logoPath) ?>">                    <div class="cardj">
-                      <div class="imagej">
-                        <div class="realimg">
-                          <img class="img-fluid w-100" src="<?= "../../formulario/upload_logo/" . $jogo['logo_jogo'] ?>" alt="<?= $jogo['nome'] ?>">
+                    <a href="../../pag-game/html2/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($logoPath) ?>">
+                      <div class="cardj">
+                        <div class="imagej">
+                          <div class="realimg">
+                            <img class="img-fluid w-100" src="<?= "../../formulario/upload_logo/" . $jogo['logo_jogo'] ?>" alt="<?= $jogo['nome'] ?>">
+                          </div>
+                        </div>
+                        <div class="gamen">
+                          <h2 class="nomej"><?= $jogo['nome'] ?></h2>
+                          <h3><?= $jogo['preco'] == 0 ? 'Gratuito' : 'R$ ' . number_format($jogo['preco'], 2, ',', '.') ?></h3>
                         </div>
                       </div>
-                      <div class="gamen">
-                        <h2 class="nomej"><?= $jogo['nome'] ?></h2>
-                        <h3><?= $jogo['preco'] == 0 ? 'Gratuito' : 'R$ ' . number_format($jogo['preco'], 2, ',', '.') ?></h3>
-                      </div>
-                    </div>
+                    </a>
                   </div>
-                </div>
+                <?php endforeach; ?>
               </div>
             </div>
-          <?php endif; ?>
+          </div>
         <?php endforeach; ?>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators-5" role="button" data-slide="prev">

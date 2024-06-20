@@ -84,18 +84,14 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
   </div>
 
  <!-- Lançamentos -->
- <div class="tamanhoS1">
+<div class="tamanhoS1">
   <div class="destaques">
     <div class="vermais">
       <h2 class="titulo">Lançamentos</h2>
       <a href="../ver_mais-lancamentos2.php"><button class="botao" type="submit">VER MAIS</button></a>
     </div>
     <div id="carouselExampleIndicators-2" class="carousel slide" data-interval="false">
-      <ol class="carousel-indicators">
-        <?php foreach ($imagens as $index => $jogo): ?>
-          <li data-target="#carouselExampleIndicators-2" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
-        <?php endforeach; ?>
-      </ol>
+      <!-- Removido o código dos indicadores numéricos -->
       <div class="carousel-inner">
         <?php
         $chunks = array_chunk($imagens, 3); // Divide as imagens em grupos de 3
@@ -106,17 +102,19 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
               <div class="row">
                 <?php foreach ($chunk as $jogo): ?>
                   <div class="col-sm-4">
-                  <a href="../../pag-game/html2/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($logoPath) ?>&arquivo_jogo=<?= urlencode($jogo['arquivo_jogo']) ?>"> <!-- Passando arquivo_jogo -->                    <div class="cardj">
-                      <div class="imagej">
-                        <div class="realimg">
-                        <img class="img-fluid w-100" src="<?= "../../formulario/upload_logo/" . $jogo['logo_jogo'] ?>" alt="<?= $jogo['nome'] ?>">
+                    <a href="../../pag-game/html2/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($jogo['logo_jogo']) ?>&arquivo_jogo=<?= urlencode($jogo['arquivo_jogo']) ?>">
+                      <div class="cardj">
+                        <div class="imagej">
+                          <div class="realimg">
+                            <img class="img-fluid w-100" src="<?= "../../formulario/upload_logo/" . $jogo['logo_jogo'] ?>" alt="<?= $jogo['nome'] ?>">
+                          </div>
+                        </div>
+                        <div class="gamen">
+                          <h2 class="nomej"><?= $jogo['nome'] ?></h2>
+                          <h3><?= $jogo['preco'] == 0 ? 'Gratuito' : 'R$ ' . number_format($jogo['preco'], 2, ',', '.') ?></h3>
                         </div>
                       </div>
-                      <div class="gamen">
-                        <h2 class="nomej"><?= $jogo['nome'] ?></h2>
-                        <h3><?= $jogo['preco'] == 0 ? 'Gratuito' : 'R$ ' . number_format($jogo['preco'], 2, ',', '.') ?></h3>
-                      </div>
-                    </div>
+                    </a>
                   </div>
                 <?php endforeach; ?>
               </div>
@@ -132,12 +130,12 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="sr-only">Next</span>
       </a>
-
-
-<!--Jogos populares-->
     </div>
   </div>
 </div>
+
+
+<!--Jogos populares-->
 <div class="tamanhoS2">
   <div class="destaques">
     <div class="vermais">
@@ -146,13 +144,13 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
     </div>
     <div id="carouselExampleIndicators-3" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
-        <?php foreach ($imagens as $index => $jogo): ?>
-          <li data-target="#carouselExampleIndicators-3" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
+        <?php foreach ($jogosPopulares as $index => $jogo): ?>
+          
         <?php endforeach; ?>
       </ol>
       <div class="carousel-inner">
         <?php
-        $chunks = array_chunk($imagens, 3); // Divide as imagens em grupos de 3
+        $chunks = array_chunk($jogosPopulares, 3); // Divide as imagens em grupos de 3
         foreach ($chunks as $index => $chunk):
           ?>
           <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
@@ -161,7 +159,7 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
                 <?php foreach ($chunk as $jogo): ?>
                   <div class="col-sm-4">
                     <!-- Início do link para a página ../../pag-game/html/pag-game.html -->
-  <a href="../../pag-game/html2/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($logoPath) ?>">
+                    <a href="../../pag-game/html2/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($jogo['logo_jogo']) ?>&arquivo_jogo=<?= urlencode($jogo['arquivo_jogo']) ?>">
                       <div class="cardj">
                         <div class="imagej">
                           <div class="realimg">
@@ -193,6 +191,8 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
     </div>
   </div>
 </div>
+
+
 <!--Procurar por categorias-->
 <div class="tamanhoS3">
   <div class="destaques">
@@ -299,37 +299,40 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
     </div>
     <div id="carouselExampleIndicators-5" class="carousel slide" data-interval="false">
       <ol class="carousel-indicators">
-        <?php foreach ($imagens as $index => $jogo): ?>
-          <?php if ($jogo['preco'] > 1 && $jogo['preco'] <= 10): ?>
-            <li data-target="#carouselExampleIndicators-5" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
-          <?php endif; ?>
+        <?php 
+        $filteredImagens = array_filter($imagens, function($jogo) {
+          return $jogo['preco'] > 1 && $jogo['preco'] <= 10;
+        });
+        $chunks = array_chunk($filteredImagens, 3);
+        foreach ($chunks as $index => $chunk): ?>
+          <li data-target="#carouselExampleIndicators-5" data-slide-to="<?= $index ?>" class="<?= $index === 0 ? 'active' : '' ?>"></li>
         <?php endforeach; ?>
       </ol>
       <div class="carousel-inner">
-        <?php
-        foreach ($imagens as $index => $jogo):
-          if ($jogo['preco'] > 1 && $jogo['preco'] <= 10): // Filtrar apenas jogos com preço entre 1 e 10
-            ?>
-            <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
-              <div class="container">
-                <div class="row">
+        <?php foreach ($chunks as $index => $chunk): ?>
+          <div class="carousel-item <?= $index === 0 ? 'active' : '' ?>">
+            <div class="container">
+              <div class="row">
+                <?php foreach ($chunk as $jogo): ?>
                   <div class="col-sm-4">
-                    <a href="../../pag-game/html2/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($logoPath) ?>">                    <div class="cardj">
-                      <div class="imagej">
-                        <div class="realimg">
-                          <img class="img-fluid w-100" src="<?= "../../formulario/upload_logo/" . $jogo['logo_jogo'] ?>" alt="<?= $jogo['nome'] ?>">
+                  <a href="../../pag-game/html2/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($jogo['logo_jogo']) ?>&arquivo_jogo=<?= urlencode($jogo['arquivo_jogo']) ?>">
+                      <div class="cardj">
+                        <div class="imagej">
+                          <div class="realimg">
+                            <img class="img-fluid w-100" src="<?= "../../formulario/upload_logo/" . $jogo['logo_jogo'] ?>" alt="<?= $jogo['nome'] ?>">
+                          </div>
+                        </div>
+                        <div class="gamen">
+                          <h2 class="nomej"><?= $jogo['nome'] ?></h2>
+                          <h3><?= $jogo['preco'] == 0 ? 'Gratuito' : 'R$ ' . number_format($jogo['preco'], 2, ',', '.') ?></h3>
                         </div>
                       </div>
-                      <div class="gamen">
-                        <h2 class="nomej"><?= $jogo['nome'] ?></h2>
-                        <h3><?= $jogo['preco'] == 0 ? 'Gratuito' : 'R$ ' . number_format($jogo['preco'], 2, ',', '.') ?></h3>
-                      </div>
-                    </div>
+                    </a>
                   </div>
-                </div>
+                <?php endforeach; ?>
               </div>
             </div>
-          <?php endif; ?>
+          </div>
         <?php endforeach; ?>
       </div>
       <a class="carousel-control-prev" href="#carouselExampleIndicators-5" role="button" data-slide="prev">

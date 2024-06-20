@@ -1,6 +1,6 @@
 <?php
 session_start();
-if(isset($_SESSION['id'])) {
+if (isset($_SESSION['id'])) {
     $id = $_SESSION['id'];
     
     // Conectar ao banco de dados
@@ -20,10 +20,9 @@ if(isset($_SESSION['id'])) {
 
 if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true) {
     header("location: ../login/html/login.html");
-    exit; 
-  }
+    exit;
+}
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,15 +40,15 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
 </head>
 <body>
     <!--Navbar-->
-        <div class="c">
+    <div class="c">
         <header class="header">
-        <img class="logo" src="../../imagens/Logo.jpeg" alt="Joystick Jungle">
+            <img class="logo" src="../../imagens/Logo.jpeg" alt="Joystick Jungle">
             <nav class="navbar">
                 <a href="../../index/html2/index.php" class="a">Inicio</a>
                 <a href="../../infor/html2/info.php" class="a">Sobre</a>
                 <a href="../../suporte/html2/suporte.php" class="a">Suporte</a>
-                <?php if (  isset($nome)) { ?> 
-                    <a href="../../tela-usuario/usuario.php" class="a john"><?= $nome ?></a>
+                <?php if (isset($nome)) { ?>
+                    <a href="../../tela-usuario/usuario.php" class="a john"><?= htmlspecialchars($nome) ?></a>
                 <?php } ?>
             </nav>
         </header>
@@ -57,6 +56,7 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
     <!--fim Navbar-->
 
     <?php
+    
     // Recuperando os parâmetros da URL
     $nomeJogo = isset($_GET['nome']) ? htmlspecialchars($_GET['nome']) : 'Nome';
     $precoJogo = isset($_GET['preco']) ? htmlspecialchars($_GET['preco']) : '9,99';
@@ -65,6 +65,7 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
     $logo_jogo = isset($_GET['logo_jogo']) ? htmlspecialchars($_GET['logo_jogo']) : 'nao_disponivel.svg';
     $imagensJogo = isset($_GET['imagem']) ? explode(',', htmlspecialchars($_GET['imagem'])) : ['default1.svg', 'default2.svg', 'default3.svg'];
     $arquivo_jogo = isset($_GET['arquivo_jogo']) ? htmlspecialchars($_GET['arquivo_jogo']) : '';
+    
     ?>
 
     <!--NOME DO JOGO E CARROSEL-->
@@ -96,7 +97,7 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
     </div>
     <!--FIM NOME DO JOGO E CARROSEL-->
 
-    <img src="../../formulario/upload_logo/<?= $logo_jogo ?>" class="subimg">
+    <img src="../../formulario/upload_logo/<?= $logo_jogo ?>" class="subimg" alt="Logo do Jogo">
 
     <!-- ESSA É A DIV QUE FAZ A DESCRIÇÃO-->
     <div class="descri">
@@ -108,7 +109,7 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
 
         <p></p>
         <div class="preco">
-            <label class="label">R$</label> 
+            <label class="label">R$</label>
             <label id="precoJogo"><?= $precoJogo != 0 ? $precoJogo : 'Gratuito' ?></label>
         </div>
     </div>

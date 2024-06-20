@@ -19,7 +19,6 @@ if(isset($_SESSION['id'])) {
 }
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -35,21 +34,20 @@ if(isset($_SESSION['id'])) {
     <!--Navbar-->
     <div class="c">
         <header class="header">
-            <img class="logo" src="../imagens/Logo.jpeg"  alt="Joystick Jungle">
+            <img class="logo" src="../imagens/Logo.jpeg" alt="Joystick Jungle">
             <nav class="navbar">
                 <a href="../index/html2/index.php" class="a">Inicio</a>
                 <a href="../infor/html2/info.php" class="a">Sobre</a>
                 <a href="../suporte/html2/suporte.php" class="a">Suporte</a>
-                <?php if (  isset($nome)) { ?> 
+                <?php if (isset($nome)) { ?> 
                     <a href="../../tela-usuario/usuario.php" class="a john"><?= $nome ?></a>
                 <?php } ?>
-                </div>
             </nav>
         </header>
     </div>
     <!--fim Navbar-->
 
-<div class="box">
+    <div class="box">
         <div class="filter-container">
             <div class="filtro">
                 <select class="botao-filtro" id="categoryFilter" onchange="filterGames()">
@@ -64,60 +62,54 @@ if(isset($_SESSION['id'])) {
             <div class="filtro">
                 <select class="botao-filtro" id="priceFilter" onchange="filterGames()">
                     <option value="all">Todos os preços</option>
-                    <option value="menor30">$30 ou menos</option>
-                    <option value="menor25">$25 ou menos</option>
-                    <option value="menor50">$50 ou menos</option>
-                    <option value="menor100">$100 ou menos</option>
+                    <option value="menor30">R$ 30 ou menos</option>
+                    <option value="menor25">R$ 25 ou menos</option>
+                    <option value="menor50">R$ 50 ou menos</option>
+                    <option value="menor100">R$ 100 ou menos</option>
                 </select>
             </div>
         </div>
-    
 
         <div class="jogos">
-    <?php
-    $conexao = mysqli_connect("localhost", "root", "", "cadastro");
+            <?php
+            $conexao = mysqli_connect("localhost", "root", "", "cadastro");
 
-    // Verifica a conexão
-    if ($conexao->connect_error) {
-        die("Connection failed: " . $conexao->connect_error);
-    }
+            // Verifica a conexão
+            if ($conexao->connect_error) {
+                die("Connection failed: " . $conexao->connect_error);
+            }
 
-    // Consulta para selecionar os jogos
-    $sql = "SELECT * FROM Jogo WHERE status_jogo!='em_breve'";
-    $result = $conexao->query($sql);
+            // Consulta para selecionar os jogos
+            $sql = "SELECT * FROM Jogo WHERE status_jogo!='em_breve'";
+            $result = $conexao->query($sql);
 
-    // Se houver resultados, exibe os jogos
-    if ($result->num_rows > 0) {
-        // Loop através dos resultados
-        while($row = $result->fetch_assoc()) {
-            // Imprime o HTML do card com os dados do jogo
-            echo '<a href="../pag-game/html/pag-game.php?id=' . $row["id"] . '&nome=' . urlencode($row["Nome"]) . '&preco=' . $row["Preco"] . '&genero=' . urlencode($row["Genero"]) . '&descricao=' . urlencode($row["Descricao"]) . '&logo_jogo=' . urlencode($row["logo_jogo"]) . '&imagem=' . urlencode($row["Imagem_jogo"]) . '&arquivo_jogo=' . urlencode($row["arquivo_jogo"]) . '" class="card" data-category="' . $row["Genero"] . '" data-price="' . $row["Preco"] . '">';
-            echo '<div class="imagem">';
-            echo '<img src="../formulario/upload_imagem/' . $row["Imagem_jogo"] . '" alt="Game Image" style="width:100%">';
-            echo '</div>';
-            echo '<div class="container">';
-            echo '<h4><b>' . $row["Nome"] . '</b></h4>';
-            echo '<p>' . $row["Descricao"] . '</p>';
-            echo '<div class="price">R$ ' . number_format($row["Preco"], 2, ',', '.') . '</div>';
-            echo '</div>';
-            echo '</a>';
-        }
-    } else {
-        echo "0 resultados";
-    }
-    $conexao->close();
-    ?>
-</div>
-
-</div>
-
+            // Se houver resultados, exibe os jogos
+            if ($result->num_rows > 0) {
+                // Loop através dos resultados
+                while($row = $result->fetch_assoc()) {
+                    // Imprime o HTML do card com os dados do jogo
+                    echo '<a href="../pag-game/html2/pag-game.php?nome=' . urlencode($row["Nome"]) . '&preco=' . urlencode($row["Preco"]) . '&imagem=' . urlencode($row["Imagem_jogo"]) . '&genero=' . urlencode($row["Genero"]) . '&descricao=' . urlencode($row["Descricao"]) . '&logo_jogo=' . urlencode($row["logo_jogo"]) . '&arquivo_jogo=' . urlencode($row["arquivo_jogo"]) . '" class="card" data-category="' . $row["Genero"] . '" data-price="' . $row["Preco"] . '">';
+                    echo '<div class="imagem">';
+                    echo '<img src="../formulario/upload_logo/' . $row["logo_jogo"] . '" alt="Game Image" style="width:100%">';
+                    echo '</div>';
+                    echo '<div class="container">';
+                    echo '<h4><b>' . $row["Nome"] . '</b></h4>';
+                    echo '<p>' . $row["Descricao"] . '</p>';
+                    echo '<div class="price">R$ ' . number_format($row["Preco"], 2, ',', '.') . '</div>';
+                    echo '</div>';
+                    echo '</a>';
+                }
+            } else {
+                echo "0 resultados";
+            }
+            $conexao->close();
+            ?>
         </div>
     </div>
 
     <script src="script.js"></script>
 </body>
 </html>
-
 
 <script>
 function filterByGenre() {
@@ -134,9 +126,7 @@ function filterByGenre() {
     });
 }
 
-// Atualize a função filterGames() para chamar a função filterByGenre() quando o filtro de gênero for alterado
 function filterGames() {
     filterByGenre();
-    // Adicione aqui qualquer outra lógica de filtragem que você já tenha implementado
 }
 </script>

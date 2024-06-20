@@ -38,6 +38,7 @@
                     <option value="rpg">Rpg</option>
                     <option value="estrategia">Estratégia</option>
                     <option value="puzzle">Puzzle</option>
+                    <option value="simulacao">simulacao</option>
                 </select>
             </div>
             <div class="filtro">
@@ -70,16 +71,16 @@
         // Loop através dos resultados
         while($row = $result->fetch_assoc()) {
             // Imprime o HTML do card com os dados do jogo
-            echo '<a href="../pag-game/html/pag-game.php?id=' . $row["id"] . '&nome=' . urlencode($row["Nome"]) . '&preco=' . $row["Preco"] . '&genero=' . urlencode($row["Genero"]) . '&descricao=' . urlencode($row["Descricao"]) . '&logo_jogo=' . urlencode($row["logo_jogo"]) . '&imagem=' . urlencode($row["Imagem_jogo"]) . '&arquivo_jogo=' . urlencode($row["arquivo_jogo"]) . '" class="card" data-category="' . $row["Genero"] . '" data-price="' . $row["Preco"] . '">';
-            echo '<div class="imagem">';
-            echo '<img src="../formulario/upload_imagem/' . $row["Imagem_jogo"] . '" alt="Game Image" style="width:100%">';
-            echo '</div>';
-            echo '<div class="container">';
-            echo '<h4><b>' . $row["Nome"] . '</b></h4>';
-            echo '<p>' . $row["Descricao"] . '</p>';
-            echo '<div class="price">R$ ' . number_format($row["Preco"], 2, ',', '.') . '</div>';
-            echo '</div>';
-            echo '</a>';
+            echo '<a href="../pag-game/html2/pag-game.php?nome=' . urlencode($row["Nome"]) . '&preco=' . urlencode($row["Preco"]) . '&imagem=' . urlencode($row["Imagem_jogo"]) . '&genero=' . urlencode($row["Genero"]) . '&descricao=' . urlencode($row["Descricao"]) . '&logo_jogo=' . urlencode($row["logo_jogo"]) . '&arquivo_jogo=' . urlencode($row["arquivo_jogo"]) . '" class="card" data-category="' . $row["Genero"] . '" data-price="' . $row["Preco"] . '">';
+                    echo '<div class="imagem">';
+                    echo '<img src="../formulario/upload_logo/' . $row["logo_jogo"] . '" alt="Game Image" style="width:100%">';
+                    echo '</div>';
+                    echo '<div class="container">';
+                    echo '<h4><b>' . $row["Nome"] . '</b></h4>';
+                    echo '<p>' . $row["Descricao"] . '</p>';
+                    echo '<div class="price">R$ ' . number_format($row["Preco"], 2, ',', '.') . '</div>';
+                    echo '</div>';
+                    echo '</a>';
         }
     } else {
         echo "0 resultados";

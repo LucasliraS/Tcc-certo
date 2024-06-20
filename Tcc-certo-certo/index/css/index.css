@@ -233,7 +233,7 @@ p{
   max-width: 100%;
   max-height: 25vh; /* Ou qualquer outra altura máxima desejada */
   width: auto;
-  height: auto;
+  height: 255px;
 }
 
 /*categoria*/

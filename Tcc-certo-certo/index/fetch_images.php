@@ -8,7 +8,7 @@ if (mysqli_connect_errno()) {
 }
 
 // Consulta para buscar os jogos, suas imagens, nomes, preços, gêneros e descrições
-$sql = "SELECT id, Nome, imagem_jogo, Preco, Genero, Descricao, logo_jogo, arquivo_jogo FROM Jogo WHERE status_jogo!='em_breve'";
+$sql = "SELECT id, Nome, imagem_jogo, Preco, Genero, Descricao, logo_jogo, arquivo_jogo FROM Jogo WHERE status_jogo != 'em_breve'";
 $resultado = mysqli_query($conexao, $sql);
 
 $imagens = [];
@@ -21,8 +21,8 @@ if ($resultado) {
             'preco' => $row['Preco'],
             'genero' => $row['Genero'],
             'descricao' => $row['Descricao'],
-            'logo_jogo' => $row['logo_jogo'], // Assumindo que o caminho correto para a logo está aqui
-            'arquivo_jogo' => $row['arquivo_jogo'] // Adicionando o caminho do arquivo do jogo
+            'logo_jogo' => $row['logo_jogo'],
+            'arquivo_jogo' => $row['arquivo_jogo']
         ];
     }
 } else {
@@ -58,7 +58,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['game_id'])) {
 }
 ?>
 
-?>
+
 
 <!-- Exemplo de carrossel -->
 <ol class="carousel-indicators">

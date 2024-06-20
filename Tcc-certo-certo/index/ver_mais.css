@@ -82,7 +82,8 @@
 }
 
 .imagem img{
-    max-height: 30vh;
+    height: 30vh;
+    max-height: 40vh;
 }
 
 .filtro{
