@@ -45,7 +45,7 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
       <h1><img class="logo" src="../../imagens/Logo.jpeg" alt="Joystick Jungle"></h1>
       <nav class="navbar">
         <a href="../../index/html2/index.php" class="a">Inicio</a>
-            <a href="../../suporte/html/suporte.html" class="a">Suporte</a>
+            <a href="../../suporte/html2/suporte.php" class="a">Suporte</a>
             <?php if (  isset($nome)) { ?> 
               <a href="../../tela-usuario/usuario.php" class="a john"><?= $nome ?></a>
             <?php } ?>

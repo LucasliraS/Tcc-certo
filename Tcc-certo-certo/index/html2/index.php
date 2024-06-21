@@ -315,7 +315,7 @@ if (!isset($_SESSION['usuario_logado']) || $_SESSION['usuario_logado'] !== true)
               <div class="row">
                 <?php foreach ($chunk as $jogo): ?>
                   <div class="col-sm-4">
-                  <a href="../../pag-game/html2/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($jogo['logo_jogo']) ?>&arquivo_jogo=<?= urlencode($jogo['arquivo_jogo']) ?>">
+                    <a href="../../pag-game/html2/pag-game.php?nome=<?= urlencode($jogo['nome']) ?>&preco=<?= urlencode($jogo['preco']) ?>&imagem=<?= urlencode($jogo['imagem']) ?>&genero=<?= urlencode($jogo['genero']) ?>&descricao=<?= urlencode($jogo['descricao']) ?>&logo_jogo=<?= urlencode($jogo['logo_jogo']) ?>&arquivo_jogo=<?= urlencode($jogo['arquivo_jogo']) ?>">
                       <div class="cardj">
                         <div class="imagej">
                           <div class="realimg">
